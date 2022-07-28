@@ -29,5 +29,10 @@ namespace FacebookLogic
                     "user_posts",
                     "user_videos");
         }
+
+        public static void Logout()
+        {
+            FacebookService.LogoutWithUI();
+        }
     }
 }
