@@ -26,7 +26,7 @@ namespace BasicFacebookFeatures
 
             if (!string.IsNullOrEmpty(loginResult.AccessToken))
             {
-                buttonLogin.Text = $"Logged in as {loginResult.LoggedInUser.Name}!";
+                buttonLogin.Text = $"Logged in as {loginResult.LoggedInUser.Name}!!";
             }
             else
             {
