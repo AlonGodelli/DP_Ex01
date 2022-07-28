@@ -39,7 +39,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FetchLogic.cs" />
     <Compile Include="LoginLogic.cs" />
+    <Compile Include="PostLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Facebook">
