@@ -30,7 +30,7 @@ namespace BasicFacebookFeatures
             }
             else
             {
-                MessageBox.Show(loginResult.ErrorMessage, "Login Failed");
+                MessageBox.Show(loginResult.ErrorMessage, "Login Failed !");
             }
         }
 
