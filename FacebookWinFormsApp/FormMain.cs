@@ -26,19 +26,19 @@ namespace BasicFacebookFeatures
 
             if (!string.IsNullOrEmpty(loginResult.AccessToken))
             {
-                buttonLogin.Text = $"Logged in as {loginResult.LoggedInUser.Name}!!";
+                buttonLogin.Text = $"Logged in as {loginResult.LoggedInUser.Name}";
             }
             else
             {
-                MessageBox.Show(loginResult.ErrorMessage, "Login Failed !");
+                MessageBox.Show(loginResult.ErrorMessage, "Login Failed");
             }
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-			FacebookService.LogoutWithUI();
-			buttonLogin.Text = "Login";
-		}
+            FacebookLogic.LoginLogic.Logout();
+            buttonLogin.Text = "Login";
+        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -46,6 +46,56 @@ namespace BasicFacebookFeatures
         }
 
         private void FormMain_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fetchButton_Click(object sender, EventArgs e)
+        {
+            switch (this.comboBox1.SelectedValue)
+            {
+                case "Posts":
+                    //FacebookLogic.FetchLogic.FetchPosts
+                    break;
+                case "Albums":
+                    break;
+                case "Events":
+                    break;
+                case "Groups":
+                    break;
+                case "Liked Pages":
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void submitButton_Click(object sender, EventArgs e)
+        {
+            //FacebookLogic.PostLogic.Post(this.postTextBox.Text);
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
