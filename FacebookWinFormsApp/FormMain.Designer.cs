@@ -130,15 +130,14 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(414, 264);
             this.listBox1.TabIndex = 57;
-            this.listBox1.Click += new System.EventHandler(this.listBoxAlbums_SelectedIndexChanged);
-
+            this.listBox1.Click += new System.EventHandler(this.listBoxSelectedIndexChanged);
             // 
-            // pictureBox1
+            // pictureBoxFetchItems
             // 
             this.pictureBoxFetchItems.BackColor = System.Drawing.SystemColors.ControlLight;
             this.pictureBoxFetchItems.Location = new System.Drawing.Point(801, 686);
             this.pictureBoxFetchItems.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBoxFetchItems.Name = "pictureBox1";
+            this.pictureBoxFetchItems.Name = "pictureBoxFetchItems";
             this.pictureBoxFetchItems.Size = new System.Drawing.Size(260, 266);
             this.pictureBoxFetchItems.TabIndex = 58;
             this.pictureBoxFetchItems.TabStop = false;

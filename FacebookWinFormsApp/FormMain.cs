@@ -73,6 +73,7 @@ namespace BasicFacebookFeatures
             switch (this.comboBox1.Text)
             {
                 case "Posts":
+                    fetchPosts();
                     //FacebookLogic.FetchLogic.FetchPosts
                     break;
                 case "Albums":
@@ -125,13 +126,30 @@ namespace BasicFacebookFeatures
             }
         }
 
-        private void listBoxAlbums_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBoxSelectedIndexChanged(object sender, EventArgs e)
         {
-            displaySelectedAlbum();
+            switch (this.comboBox1.Text)
+            {
+                case "Posts":
+                    //FacebookLogic.FetchLogic.FetchPosts
+                    break;
+                case "Albums":
+                    displaySelectedAlbum();
+                    break;
+                case "Events":
+                    break;
+                case "Groups":
+                    break;
+                case "Liked Pages":
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void displaySelectedAlbum()
         {
+            pictureBoxFetchItems.Visible = true;
             if (listBox1.SelectedItems.Count == 1)
             {
                 Album selectedAlbum = listBox1.SelectedItem as Album;
@@ -143,6 +161,41 @@ namespace BasicFacebookFeatures
                 {
                     pictureBoxFetchItems.Image = pictureBoxFetchItems.ErrorImage;
                 }
+            }
+        }
+
+        private void linkPosts_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            fetchPosts();
+        }
+
+        /// <summary>
+        /// Fetching posts *** made by the logged in user ***:
+        /// </summary>
+        private void fetchPosts()
+        {
+            listBox1.Items.Clear();
+            pictureBoxFetchItems.Visible = false;
+
+            foreach (Post post in loggedInUser.Posts)
+            {
+                if (post.Message != null)
+                {
+                    listBox1.Items.Add(post.Message);
+                }
+                else if (post.Caption != null)
+                {
+                    listBox1.Items.Add(post.Caption);
+                }
+                else
+                {
+                    listBox1.Items.Add(string.Format("[{0}]", post.Type));
+                }
+            }
+
+            if (listBox1.Items.Count == 0)
+            {
+                MessageBox.Show("No Posts to retrieve :(");
             }
         }
     }
