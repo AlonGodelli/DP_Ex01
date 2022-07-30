@@ -24,21 +24,16 @@ namespace BasicFacebookFeatures
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            loginResult = LoginLogic.Login();
+            bool isLogInSucceeded = LoginLogic.Login();
 
-            if (!string.IsNullOrEmpty(loginResult.AccessToken))
+            if (isLogInSucceeded == true)
             {
-                loggedInUser = loginResult.LoggedInUser;
-
-                // get it somewhwre else
-                buttonLogin.Text = $"Logged in as {loginResult.LoggedInUser.Name}";
-                profilePicture.LoadAsync(loggedInUser.PictureLargeURL);
-               
-
+                buttonLogin.Text = $"Logged in as {FacebookLogic.FetchLogic.getUserName()}";
+                profilePicture.LoadAsync(FacebookLogic.FetchLogic.getProfilePicture());
             }
             else
             {
-                MessageBox.Show(loginResult.ErrorMessage, "Login Failed");
+                MessageBox.Show(" Login Failed");
             }
         }
 
