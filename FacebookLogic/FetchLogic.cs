@@ -78,7 +78,7 @@ namespace FacebookLogic
         {
             List<String> userGroupsList = new List<String>();
 
-            foreach (Group group in loggedInUser.Groups)
+            foreach (Group group in loggedInUser.Groups) // ?????????????????????????????????
             {
                 userGroupsList.Add(group.Name);
             }
