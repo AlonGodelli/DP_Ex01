@@ -127,17 +127,21 @@ namespace BasicFacebookFeatures
 
         private void fetchAlbums()
         {
+            List<string> userAlbumsList = new List<string>();
+
             listBox1.Items.Clear();
             listBox1.DisplayMember = "Name";
 
-            foreach (Album album in loggedInUser.Albums)
+            userAlbumsList = FacebookLogic.FetchLogic.getAlbumsNames(); 
+
+            foreach (string albumName in userAlbumsList)
             {
-                listBox1.Items.Add(album);
+                listBox1.Items.Add(albumName);
             }
 
-            if (listBox1.Items.Count == 0)
+            if (userAlbumsList.Count == 0)
             {
-                MessageBox.Show("No Albums to retrieve :(");
+                MessageBox.Show("No Albums to retrieve");
             }
         }
 
@@ -146,10 +150,11 @@ namespace BasicFacebookFeatures
             pictureBoxFetchItems.Visible = true;
             if (listBox1.SelectedItems.Count == 1)
             {
-                Album selectedAlbum = listBox1.SelectedItem as Album;
-                if (selectedAlbum.PictureAlbumURL != null)
+                string selectedAlbumPicture = FacebookLogic.FetchLogic.getSelectedAlbumPicture(listBox1.SelectedItems);
+
+                if (selectedAlbumPicture != null)
                 {
-                    pictureBoxFetchItems.LoadAsync(selectedAlbum.PictureAlbumURL);
+                    pictureBoxFetchItems.LoadAsync(selectedAlbumPicture);
                 }
                 else
                 {
@@ -160,12 +165,11 @@ namespace BasicFacebookFeatures
         private void fetchPosts()
         {
             List <string> userPostsList;
-            int postCounter = 0;
 
             listBox1.Items.Clear();
             pictureBoxFetchItems.Visible = false;
 
-            //userPostsList = FacebookLogic.FetchLogic.getUserPosts(ref postCounter);
+            userPostsList = FacebookLogic.FetchLogic.getUserPosts();
 
             foreach (string message in userPostsList)
             {
@@ -175,9 +179,9 @@ namespace BasicFacebookFeatures
                 }
             }
 
-            if (postCounter == 0)
+            if (userPostsList.Count == 0)
             {
-                MessageBox.Show("No Posts to retrieve :(");
+                MessageBox.Show("No Posts to retrieve");
             }
         }
     }

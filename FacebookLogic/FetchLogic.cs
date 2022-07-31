@@ -22,50 +22,45 @@ namespace FacebookLogic
             return loggedInUser.Name;
         }
 
-    //    public static List<String> getUserPosts(ref int o_PostCounter)
-    //    {
-    //        List <String> userPostsList = new List <String>();
-    //        o_PostCounter = 0;
+        public static List<String> getUserPosts()
+        {
+            List<String> userPostsList = new List<String>();
 
+            foreach (Post post in loggedInUser.Posts)
+            {
+                if (post.Message != null)
+                {
+                    userPostsList.Add(post.Message);
+                }
+            }
 
-    //        foreach (Post post in loggedInUser.Posts)
-    //        {
-    //            if (post.Message != null)
-    //            {
-    //                userPostsList.Add(post.Message);
-    //                o_PostCounter++;
-    //            }
-    //            else if (post.Caption != null)
-    //            {
-    //                //listBox1.Items.Add(post.Caption);
-    //            }
-              
-    //        }
-    //    }
-    //    private void getAlbumsNames()
-    //    {
-    //        foreach (Album album in loggedInUser.Albums)
-    //        {
-    //            listBox1.Items.Add(album);
-    //            //album.ReFetch(DynamicWrapper.eLoadOptions.Full);
-    //        }
-    //    }
+            return userPostsList;
+        }
 
-    //    private void displaySelectedAlbum()
-    //    {
-    //        pictureBoxFetchItems.Visible = true;
-    //        if (listBox1.SelectedItems.Count == 1)
-    //        {
-    //            Album selectedAlbum = listBox1.SelectedItem as Album;
-    //            if (selectedAlbum.PictureAlbumURL != null)
-    //            {
-    //                pictureBoxFetchItems.LoadAsync(selectedAlbum.PictureAlbumURL);
-    //            }
-    //            else
-    //            {
-    //                pictureBoxFetchItems.Image = pictureBoxFetchItems.ErrorImage;
-    //            }
-    //        }
-    //    }
+        public static List<String> getAlbumsNames()
+        {
+            List<String> userAlbumsList = new List<String>();
+
+            foreach (Album album in loggedInUser.Albums)
+            {
+                userAlbumsList.Add(album.Name);
+            }
+
+            return userAlbumsList;
+        }
+
+        public static string getSelectedAlbumPicture(string i_albumName)
+        {
+            string albumPictureSource = null;
+
+            foreach (Album album in loggedInUser.Albums)
+            {
+                if (album.Name == i_albumName)
+                {
+                    albumPictureSource = album.PictureAlbumURL;
+                }
+            }
+            return albumPictureSource;
+        }
     }
 }
