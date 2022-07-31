@@ -62,5 +62,28 @@ namespace FacebookLogic
             }
             return albumPictureSource;
         }
+        public static List<String> getEvents()
+        {
+            List<String> userEvents = new List<String>();
+
+            foreach (Event fbEvent in loggedInUser.Events)
+            {
+                userEvents.Add(fbEvent.Description);
+            }
+
+            return userEvents;
+        }
+
+        public static List<String> getUserGroupsNames()
+        {
+            List<String> userGroupsList = new List<String>();
+
+            foreach (Group group in loggedInUser.Groups)
+            {
+                userGroupsList.Add(group.Name);
+            }
+
+            return userGroupsList;
+        }
     }
 }

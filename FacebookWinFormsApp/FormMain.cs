@@ -74,8 +74,10 @@ namespace BasicFacebookFeatures
                     fetchAlbums();
                     break;
                 case "Events":
+                    fetchEvents();
                     break;
                 case "Groups":
+                    fetchGroups();
                     break;
                 case "Liked Pages":
                     break;
@@ -117,6 +119,7 @@ namespace BasicFacebookFeatures
                 case "Events":
                     break;
                 case "Groups":
+                    //displaySelectedGroup();
                     break;
                 case "Liked Pages":
                     break;
@@ -124,7 +127,6 @@ namespace BasicFacebookFeatures
                     break;
             }
         }
-
         private void fetchAlbums()
         {
             List<string> userAlbumsList = new List<string>();
@@ -144,13 +146,13 @@ namespace BasicFacebookFeatures
                 MessageBox.Show("No Albums to retrieve");
             }
         }
-
         private void displaySelectedAlbum()
         {
             pictureBoxFetchItems.Visible = true;
             if (listBox1.SelectedItems.Count == 1)
             {
-                string selectedAlbumPicture = FacebookLogic.FetchLogic.getSelectedAlbumPicture(listBox1.SelectedItems);
+                // not working
+                string selectedAlbumPicture = FacebookLogic.FetchLogic.getSelectedAlbumPicture(listBox1.SelectedItems.ToString());
 
                 if (selectedAlbumPicture != null)
                 {
@@ -182,6 +184,52 @@ namespace BasicFacebookFeatures
             if (userPostsList.Count == 0)
             {
                 MessageBox.Show("No Posts to retrieve");
+            }
+        }
+        private void fetchEvents()
+        {
+            List<String> userEventsList;
+
+            listBox1.Items.Clear();
+            listBox1.DisplayMember = "Name";
+            userEventsList = FacebookLogic.FetchLogic.getEvents();
+
+            foreach (string fbEvent in userEventsList)
+            {
+                listBox1.Items.Add(fbEvent);
+            }
+
+            if (userEventsList.Count == 0)
+            {
+                MessageBox.Show("No Events to retrieve");
+            }
+        }
+
+        //private void displaySelectedGroup()
+        //{
+        //    if (listBoxGroups.SelectedItems.Count == 1)
+        //    {
+        //        Group selectedGroup = listBoxGroups.SelectedItem as Group;
+        //        pictureBoxGroup.LoadAsync(selectedGroup.PictureNormalURL);
+        //    }
+        //}
+        private void fetchGroups()
+        {
+            List<string> userGroupsList = new List<string>();
+
+            listBox1.Items.Clear();
+            listBox1.DisplayMember = "Name";
+
+            userGroupsList = FacebookLogic.FetchLogic.getUserGroupsNames();
+
+            foreach (string group in userGroupsList)
+            {
+                userGroupsList.Add(group);
+            }
+
+            if (userGroupsList.Count == 0)
+            {
+                MessageBox.Show("No groups to retrieve ");
             }
         }
     }
