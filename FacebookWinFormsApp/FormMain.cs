@@ -15,7 +15,6 @@ namespace BasicFacebookFeatures
     public partial class FormMain : Form
     {
         public User loggedInUser { get; set; }
-        public LoginResult loginResult { get; set; }
         public FormMain()
         {
             InitializeComponent();
@@ -105,22 +104,6 @@ namespace BasicFacebookFeatures
 
         }
 
-        private void fetchAlbums()
-        {
-            listBox1.Items.Clear();
-            listBox1.DisplayMember = "Name";
-            foreach (Album album in loggedInUser.Albums)
-            {
-                listBox1.Items.Add(album);
-                //album.ReFetch(DynamicWrapper.eLoadOptions.Full);
-            }
-
-            if (listBox1.Items.Count == 0)
-            {
-                MessageBox.Show("No Albums to retrieve :(");
-            }
-        }
-
         private void listBoxSelectedIndexChanged(object sender, EventArgs e)
         {
             switch (this.comboBox1.Text)
@@ -142,6 +125,22 @@ namespace BasicFacebookFeatures
             }
         }
 
+        private void fetchAlbums()
+        {
+            listBox1.Items.Clear();
+            listBox1.DisplayMember = "Name";
+
+            foreach (Album album in loggedInUser.Albums)
+            {
+                listBox1.Items.Add(album);
+            }
+
+            if (listBox1.Items.Count == 0)
+            {
+                MessageBox.Show("No Albums to retrieve :(");
+            }
+        }
+
         private void displaySelectedAlbum()
         {
             pictureBoxFetchItems.Visible = true;
@@ -158,37 +157,25 @@ namespace BasicFacebookFeatures
                 }
             }
         }
-
-        private void linkPosts_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            fetchPosts();
-        }
-
-        /// <summary>
-        /// Fetching posts *** made by the logged in user ***:
-        /// </summary>
         private void fetchPosts()
         {
+            List <string> userPostsList;
+            int postCounter = 0;
+
             listBox1.Items.Clear();
             pictureBoxFetchItems.Visible = false;
 
-            foreach (Post post in loggedInUser.Posts)
+            //userPostsList = FacebookLogic.FetchLogic.getUserPosts(ref postCounter);
+
+            foreach (string message in userPostsList)
             {
-                if (post.Message != null)
+                if (message != null)
                 {
-                    listBox1.Items.Add(post.Message);
-                }
-                else if (post.Caption != null)
-                {
-                    listBox1.Items.Add(post.Caption);
-                }
-                else
-                {
-                    listBox1.Items.Add(string.Format("[{0}]", post.Type));
+                    listBox1.Items.Add(message);
                 }
             }
 
-            if (listBox1.Items.Count == 0)
+            if (postCounter == 0)
             {
                 MessageBox.Show("No Posts to retrieve :(");
             }
