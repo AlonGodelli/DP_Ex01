@@ -93,7 +93,7 @@ namespace FacebookLogic
         {
             List<String> userGroupsList = new List<String>();
 
-            foreach (Group group in loggedInUser.Groups) // ?????????????????????????????????
+            foreach (Group group in loggedInUser.Groups)
             {
                 userGroupsList.Add(group.Name);
             }
@@ -111,6 +111,42 @@ namespace FacebookLogic
             }
 
             return likedPages;
+        }
+
+        public static IDictionary<string, int> postActivityStatistic()
+        {
+            IDictionary<string, int> postCountByYear = new Dictionary<string, int>();
+            int fromYear = 2009;
+            int toYear = 2022;
+
+            initActivityStatisticDictionary(fromYear, toYear, postCountByYear);
+
+            foreach (Post post in loggedInUser.Posts)
+            {
+                if (post.Message != null)
+                {
+                    try
+                    {
+                        postCountByYear[(post.CreatedTime.ToString()).Substring(6, 4)] += 1;
+                    }
+                    catch
+                    {
+                        continue;
+                    }
+                }
+            }
+
+            return postCountByYear;
+        }
+
+
+        private static void initActivityStatisticDictionary(int i_FromYear, int i_ToYear, IDictionary<string, int> io_ActivityStatisticDictionary)
+        {
+
+            for (int year = i_FromYear; year <= i_ToYear; year++)
+            {
+                io_ActivityStatisticDictionary.Add(year.ToString(), 0);
+            }
         }
     }
 }

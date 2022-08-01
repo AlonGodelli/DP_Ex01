@@ -189,6 +189,7 @@ namespace BasicFacebookFeatures
             listBox1.Items.Clear();
             pictureBoxFetchItems.Visible = false;
 
+            IDictionary<string, int> postCountByYear = FacebookLogic.FetchLogic.postActivityStatistic();
             userPostsList = FacebookLogic.FetchLogic.FetchUserPosts();
 
             foreach (string message in userPostsList)
