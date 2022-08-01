@@ -31,7 +31,8 @@ namespace FacebookLogic
                     "user_location",
                     "user_photos",
                     "user_posts",
-                    "user_videos");
+                    "user_videos"
+                    );
 
             if (!string.IsNullOrEmpty(loginResult.AccessToken))
             {

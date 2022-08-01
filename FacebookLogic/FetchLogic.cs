@@ -12,17 +12,17 @@ namespace FacebookLogic
 {
     public class FetchLogic : FacebookLogicManagment
     {
-        public static string getProfilePicture()
+        public static string FetchProfilePicture()
         {
             return loggedInUser.PictureLargeURL;
         }
 
-        public static string getUserName()
+        public static string FetchUserName()
         {
             return loggedInUser.Name;
         }
 
-        public static List<String> getUserPosts()
+        public static List<String> FetchUserPosts()
         {
             List<String> userPostsList = new List<String>();
 
@@ -37,7 +37,7 @@ namespace FacebookLogic
             return userPostsList;
         }
 
-        public static List<String> getAlbumsNames()
+        public static List<String> FetchAlbumsNames()
         {
             List<String> userAlbumsList = new List<String>();
 
@@ -49,7 +49,7 @@ namespace FacebookLogic
             return userAlbumsList;
         }
 
-        public static string getSelectedAlbumPicture(string i_albumName)
+        public static string FetchSelectedAlbumPicture(string i_albumName)
         {
             string albumPictureSource = null;
 
@@ -62,7 +62,7 @@ namespace FacebookLogic
             }
             return albumPictureSource;
         }
-        public static List<String> getEvents()
+        public static List<String> FetchEvents()
         {
             List<String> userEvents = new List<String>();
 
@@ -74,7 +74,7 @@ namespace FacebookLogic
             return userEvents;
         }
 
-        public static List<String> getUserGroupsNames()
+        public static List<String> FetchUserGroupsNames()
         {
             List<String> userGroupsList = new List<String>();
 
@@ -84,6 +84,18 @@ namespace FacebookLogic
             }
 
             return userGroupsList;
+        }
+
+        public static List<String> fetchLikedPages()
+        {
+            List<String> likedPages = new List<String>();
+
+            foreach (Page page in loggedInUser.LikedPages)
+            {
+                likedPages.Add(page.Name);
+            }
+
+            return likedPages;
         }
     }
 }

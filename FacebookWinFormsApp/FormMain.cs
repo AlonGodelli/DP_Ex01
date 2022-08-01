@@ -27,8 +27,8 @@ namespace BasicFacebookFeatures
 
             if (isLogInSucceeded == true)
             {
-                buttonLogin.Text = $"Logged in as {FacebookLogic.FetchLogic.getUserName()}";
-                profilePicture.LoadAsync(FacebookLogic.FetchLogic.getProfilePicture());
+                buttonLogin.Text = $"Logged in as {FacebookLogic.FetchLogic.FetchUserName()}";
+                profilePicture.LoadAsync(FacebookLogic.FetchLogic.FetchProfilePicture());
             }
             else
             {
@@ -67,19 +67,20 @@ namespace BasicFacebookFeatures
             switch (this.comboBox1.Text)
             {
                 case "Posts":
-                    fetchPosts();
+                    getPosts();
                     //FacebookLogic.FetchLogic.FetchPosts
                     break;
                 case "Albums":
-                    fetchAlbums();
+                    getAlbums();
                     break;
                 case "Events":
-                    fetchEvents();
+                    getEvents();
                     break;
                 case "Groups":
-                    fetchGroups();
+                    getGroups();
                     break;
-                case "Liked Pages":
+                case "Liked Pages": 
+                    getLikedPages();
                     break;
                 default:
                     break;
@@ -127,14 +128,15 @@ namespace BasicFacebookFeatures
                     break;
             }
         }
-        private void fetchAlbums()
+
+        private void getAlbums()
         {
             List<string> userAlbumsList = new List<string>();
 
             listBox1.Items.Clear();
             listBox1.DisplayMember = "Name";
 
-            userAlbumsList = FacebookLogic.FetchLogic.getAlbumsNames(); 
+            userAlbumsList = FacebookLogic.FetchLogic.FetchAlbumsNames();
 
             foreach (string albumName in userAlbumsList)
             {
@@ -146,14 +148,14 @@ namespace BasicFacebookFeatures
                 MessageBox.Show("No Albums to retrieve");
             }
         }
+
         private void displaySelectedAlbum()
         {
             pictureBoxFetchItems.Visible = true;
             if (listBox1.SelectedItems.Count == 1)
             {
                 // not working
-                string selectedAlbumPicture = FacebookLogic.FetchLogic.getSelectedAlbumPicture(listBox1.SelectedItems.ToString());
-
+                string selectedAlbumPicture = FacebookLogic.FetchLogic.FetchSelectedAlbumPicture(listBox1.SelectedItem.ToString());
                 if (selectedAlbumPicture != null)
                 {
                     pictureBoxFetchItems.LoadAsync(selectedAlbumPicture);
@@ -164,14 +166,15 @@ namespace BasicFacebookFeatures
                 }
             }
         }
-        private void fetchPosts()
+
+        private void getPosts()
         {
-            List <string> userPostsList;
+            List<string> userPostsList;
 
             listBox1.Items.Clear();
             pictureBoxFetchItems.Visible = false;
 
-            userPostsList = FacebookLogic.FetchLogic.getUserPosts();
+            userPostsList = FacebookLogic.FetchLogic.FetchUserPosts();
 
             foreach (string message in userPostsList)
             {
@@ -186,13 +189,13 @@ namespace BasicFacebookFeatures
                 MessageBox.Show("No Posts to retrieve");
             }
         }
-        private void fetchEvents()
+        private void getEvents()
         {
             List<String> userEventsList;
 
             listBox1.Items.Clear();
             listBox1.DisplayMember = "Name";
-            userEventsList = FacebookLogic.FetchLogic.getEvents();
+            userEventsList = FacebookLogic.FetchLogic.FetchEvents();
 
             foreach (string fbEvent in userEventsList)
             {
@@ -213,23 +216,44 @@ namespace BasicFacebookFeatures
         //        pictureBoxGroup.LoadAsync(selectedGroup.PictureNormalURL);
         //    }
         //}
-        private void fetchGroups()
+
+        private void getGroups()
         {
             List<string> userGroupsList = new List<string>();
 
             listBox1.Items.Clear();
             listBox1.DisplayMember = "Name";
 
-            userGroupsList = FacebookLogic.FetchLogic.getUserGroupsNames();
+            userGroupsList = FacebookLogic.FetchLogic.FetchUserGroupsNames();
 
             foreach (string group in userGroupsList)
             {
-                userGroupsList.Add(group);
+                listBox1.Items.Add(group);
             }
 
             if (userGroupsList.Count == 0)
             {
-                MessageBox.Show("No groups to retrieve ");
+                MessageBox.Show("No groups to retrieve");
+            }
+        }
+
+        private void getLikedPages()
+        {
+            List<string> userLikedPages = new List<string>();
+
+            listBox1.Items.Clear();
+            listBox1.DisplayMember = "Name";
+
+            userLikedPages = FacebookLogic.FetchLogic.fetchLikedPages();
+
+            foreach (string page in userLikedPages)
+            {
+                listBox1.Items.Add(page);
+            }
+
+            if (userLikedPages.Count == 0)
+            {
+                MessageBox.Show("No liked pages to retrieve");
             }
         }
     }
