@@ -139,6 +139,29 @@ namespace FacebookLogic
             return postCountByYear;
         }
 
+        public static IDictionary<string, int> photosActivityStatistic()
+        {
+            IDictionary<string, int> postCountByYear = new Dictionary<string, int>();
+            int fromYear = 2009;
+            int toYear = 2022;
+
+            initActivityStatisticDictionary(fromYear, toYear, postCountByYear);
+
+            foreach (Photo photo in loggedInUser.PhotosTaggedIn) // not work as expected
+            {
+                try
+                {
+
+                    postCountByYear[(photo.CreatedTime.ToString()).Substring(6, 4)] += 1;
+                }
+                catch
+                {
+                    continue;
+                }
+            }
+
+            return postCountByYear;
+        }
 
         private static void initActivityStatisticDictionary(int i_FromYear, int i_ToYear, IDictionary<string, int> io_ActivityStatisticDictionary)
         {
