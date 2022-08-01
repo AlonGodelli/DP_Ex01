@@ -68,7 +68,6 @@ namespace BasicFacebookFeatures
             {
                 case "Posts":
                     getPosts();
-                    //FacebookLogic.FetchLogic.FetchPosts
                     break;
                 case "Albums":
                     getAlbums();
@@ -79,7 +78,7 @@ namespace BasicFacebookFeatures
                 case "Groups":
                     getGroups();
                     break;
-                case "Liked Pages": 
+                case "Liked Pages":
                     getLikedPages();
                     break;
                 default:
@@ -112,7 +111,6 @@ namespace BasicFacebookFeatures
             switch (this.comboBox1.Text)
             {
                 case "Posts":
-                    //FacebookLogic.FetchLogic.FetchPosts
                     break;
                 case "Albums":
                     displaySelectedAlbum();
@@ -123,6 +121,7 @@ namespace BasicFacebookFeatures
                     //displaySelectedGroup();
                     break;
                 case "Liked Pages":
+                    displaySelectedLikedPage();
                     break;
                 default:
                     break;
@@ -154,11 +153,27 @@ namespace BasicFacebookFeatures
             pictureBoxFetchItems.Visible = true;
             if (listBox1.SelectedItems.Count == 1)
             {
-                // not working
                 string selectedAlbumPicture = FacebookLogic.FetchLogic.FetchSelectedAlbumPicture(listBox1.SelectedItem.ToString());
                 if (selectedAlbumPicture != null)
                 {
                     pictureBoxFetchItems.LoadAsync(selectedAlbumPicture);
+                }
+                else
+                {
+                    pictureBoxFetchItems.Image = pictureBoxFetchItems.ErrorImage;
+                }
+            }
+        }
+
+        private void displaySelectedLikedPage()
+        {
+            pictureBoxFetchItems.Visible = true;
+            if (listBox1.SelectedItems.Count == 1)
+            {
+                string selectedLikedPagePicture = FacebookLogic.FetchLogic.FetchSelectedLikedPage(listBox1.SelectedItem.ToString());
+                if (selectedLikedPagePicture != null)
+                {
+                    pictureBoxFetchItems.LoadAsync(selectedLikedPagePicture);
                 }
                 else
                 {

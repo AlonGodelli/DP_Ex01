@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 
-
-
 namespace FacebookLogic
 {
     public class FetchLogic : FacebookLogicManagment
@@ -60,8 +58,25 @@ namespace FacebookLogic
                     albumPictureSource = album.PictureAlbumURL;
                 }
             }
+
             return albumPictureSource;
         }
+
+        public static string FetchSelectedLikedPage(string i_PageName)
+        {
+            string likedPageSource = null;
+
+            foreach (Page page in loggedInUser.LikedPages)
+            {
+                if (page.Name == i_PageName)
+                {
+                    likedPageSource = page.PictureNormalURL;
+                }
+            }
+
+            return likedPageSource;
+        }
+
         public static List<String> FetchEvents()
         {
             List<String> userEvents = new List<String>();

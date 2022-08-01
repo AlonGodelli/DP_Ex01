@@ -48,10 +48,9 @@
             // buttonLogin
             // 
             this.buttonLogin.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonLogin.Location = new System.Drawing.Point(26, 88);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonLogin.Location = new System.Drawing.Point(17, 57);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(273, 35);
+            this.buttonLogin.Size = new System.Drawing.Size(182, 23);
             this.buttonLogin.TabIndex = 36;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
@@ -60,10 +59,9 @@
             // buttonLogout
             // 
             this.buttonLogout.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonLogout.Location = new System.Drawing.Point(26, 132);
-            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonLogout.Location = new System.Drawing.Point(17, 86);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(273, 35);
+            this.buttonLogout.Size = new System.Drawing.Size(182, 23);
             this.buttonLogout.TabIndex = 52;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = false;
@@ -73,10 +71,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 43);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(14, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(269, 20);
+            this.label1.Size = new System.Drawing.Size(185, 13);
             this.label1.TabIndex = 53;
             this.label1.Text = "Welcome to our Facebook app!";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -92,30 +89,27 @@
             "Events",
             "Groups",
             "Liked Pages"});
-            this.comboBox1.Location = new System.Drawing.Point(668, 617);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox1.Location = new System.Drawing.Point(445, 401);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(180, 28);
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 54;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(429, 622);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(286, 404);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(225, 20);
+            this.label2.Size = new System.Drawing.Size(153, 13);
             this.label2.TabIndex = 55;
             this.label2.Text = "Please choose what to display:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // fetchButton
             // 
-            this.fetchButton.Location = new System.Drawing.Point(858, 617);
-            this.fetchButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.fetchButton.Location = new System.Drawing.Point(572, 401);
             this.fetchButton.Name = "fetchButton";
-            this.fetchButton.Size = new System.Drawing.Size(112, 35);
+            this.fetchButton.Size = new System.Drawing.Size(75, 23);
             this.fetchButton.TabIndex = 56;
             this.fetchButton.Text = "Fetch";
             this.fetchButton.UseVisualStyleBackColor = true;
@@ -124,21 +118,19 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(376, 686);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listBox1.Location = new System.Drawing.Point(251, 446);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(414, 264);
+            this.listBox1.Size = new System.Drawing.Size(277, 173);
             this.listBox1.TabIndex = 57;
             this.listBox1.Click += new System.EventHandler(this.listBoxSelectedIndexChanged);
             // 
             // pictureBoxFetchItems
             // 
             this.pictureBoxFetchItems.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBoxFetchItems.Location = new System.Drawing.Point(801, 686);
-            this.pictureBoxFetchItems.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBoxFetchItems.Location = new System.Drawing.Point(534, 446);
             this.pictureBoxFetchItems.Name = "pictureBoxFetchItems";
-            this.pictureBoxFetchItems.Size = new System.Drawing.Size(260, 266);
+            this.pictureBoxFetchItems.Size = new System.Drawing.Size(173, 173);
+            this.pictureBoxFetchItems.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxFetchItems.TabIndex = 58;
             this.pictureBoxFetchItems.TabStop = false;
             this.pictureBoxFetchItems.Click += new System.EventHandler(this.pictureBox1_Click);
@@ -147,10 +139,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(632, 572);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(421, 372);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 20);
+            this.label3.Size = new System.Drawing.Size(100, 13);
             this.label3.TabIndex = 59;
             this.label3.Text = "User Information";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -159,29 +150,26 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(632, 43);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(421, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 20);
+            this.label4.Size = new System.Drawing.Size(80, 13);
             this.label4.TabIndex = 60;
             this.label4.Text = "Write a post:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // postTextBox
             // 
-            this.postTextBox.Location = new System.Drawing.Point(485, 88);
-            this.postTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.postTextBox.Location = new System.Drawing.Point(323, 57);
             this.postTextBox.Name = "postTextBox";
-            this.postTextBox.Size = new System.Drawing.Size(400, 175);
+            this.postTextBox.Size = new System.Drawing.Size(268, 115);
             this.postTextBox.TabIndex = 61;
             this.postTextBox.Text = "";
             // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(773, 291);
-            this.submitButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.submitButton.Location = new System.Drawing.Point(515, 189);
             this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(112, 35);
+            this.submitButton.Size = new System.Drawing.Size(75, 23);
             this.submitButton.TabIndex = 62;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
@@ -190,19 +178,18 @@
             // profilePicture
             // 
             this.profilePicture.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.profilePicture.Location = new System.Drawing.Point(25, 191);
-            this.profilePicture.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.profilePicture.Location = new System.Drawing.Point(17, 124);
             this.profilePicture.Name = "profilePicture";
-            this.profilePicture.Size = new System.Drawing.Size(274, 262);
+            this.profilePicture.Size = new System.Drawing.Size(183, 170);
             this.profilePicture.TabIndex = 63;
             this.profilePicture.TabStop = false;
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1437, 1050);
+            this.ClientSize = new System.Drawing.Size(958, 682);
             this.Controls.Add(this.profilePicture);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.postTextBox);
@@ -216,7 +203,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.buttonLogin);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
