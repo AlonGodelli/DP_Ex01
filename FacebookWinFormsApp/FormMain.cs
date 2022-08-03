@@ -204,6 +204,25 @@ namespace BasicFacebookFeatures
                 MessageBox.Show("No Posts to retrieve");
             }
         }
+
+        private void getMostPopularPost()
+        {
+            Post mostPopularPost = null;
+
+            listBox1.Items.Clear();
+            mostPopularPost = FacebookLogic.FetchLogic.FetchMostPopularPost();
+
+            if (mostPopularPost != null)
+            {
+                popularPostListBox.Items.Add($"Post: {mostPopularPost.Message}");
+                popularPostListBox.Items.Add($"# of Comments: {mostPopularPost.Comments.Count}");
+            }
+            else
+            {
+                MessageBox.Show("No Posts to retrieve");
+            }
+        }
+
         private void getEvents()
         {
             List<String> userEventsList;
@@ -270,6 +289,16 @@ namespace BasicFacebookFeatures
             {
                 MessageBox.Show("No liked pages to retrieve");
             }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void popularPostFetchButton_Click(object sender, EventArgs e)
+        {
+            getMostPopularPost();
         }
     }
 }
