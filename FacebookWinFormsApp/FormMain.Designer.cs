@@ -41,6 +41,13 @@
             this.postTextBox = new System.Windows.Forms.RichTextBox();
             this.submitButton = new System.Windows.Forms.Button();
             this.profilePicture = new System.Windows.Forms.PictureBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.popularPostFetchButton = new System.Windows.Forms.Button();
+            this.popularPostListBox = new System.Windows.Forms.ListBox();
+            this.statsListBox = new System.Windows.Forms.ListBox();
+            this.statsFetchButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFetchItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             this.SuspendLayout();
@@ -89,7 +96,7 @@
             "Events",
             "Groups",
             "Liked Pages"});
-            this.comboBox1.Location = new System.Drawing.Point(445, 401);
+            this.comboBox1.Location = new System.Drawing.Point(507, 290);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 54;
@@ -98,7 +105,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(286, 404);
+            this.label2.Location = new System.Drawing.Point(348, 293);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(153, 13);
             this.label2.TabIndex = 55;
@@ -107,7 +114,7 @@
             // 
             // fetchButton
             // 
-            this.fetchButton.Location = new System.Drawing.Point(572, 401);
+            this.fetchButton.Location = new System.Drawing.Point(634, 290);
             this.fetchButton.Name = "fetchButton";
             this.fetchButton.Size = new System.Drawing.Size(75, 23);
             this.fetchButton.TabIndex = 56;
@@ -118,7 +125,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(251, 446);
+            this.listBox1.Location = new System.Drawing.Point(313, 335);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(277, 173);
             this.listBox1.TabIndex = 57;
@@ -127,7 +134,7 @@
             // pictureBoxFetchItems
             // 
             this.pictureBoxFetchItems.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBoxFetchItems.Location = new System.Drawing.Point(534, 446);
+            this.pictureBoxFetchItems.Location = new System.Drawing.Point(596, 335);
             this.pictureBoxFetchItems.Name = "pictureBoxFetchItems";
             this.pictureBoxFetchItems.Size = new System.Drawing.Size(173, 173);
             this.pictureBoxFetchItems.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -139,7 +146,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(421, 372);
+            this.label3.Location = new System.Drawing.Point(483, 261);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(100, 13);
             this.label3.TabIndex = 59;
@@ -150,7 +157,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(421, 28);
+            this.label4.Location = new System.Drawing.Point(493, 28);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 13);
             this.label4.TabIndex = 60;
@@ -159,7 +166,7 @@
             // 
             // postTextBox
             // 
-            this.postTextBox.Location = new System.Drawing.Point(323, 57);
+            this.postTextBox.Location = new System.Drawing.Point(395, 57);
             this.postTextBox.Name = "postTextBox";
             this.postTextBox.Size = new System.Drawing.Size(268, 115);
             this.postTextBox.TabIndex = 61;
@@ -167,7 +174,7 @@
             // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(515, 189);
+            this.submitButton.Location = new System.Drawing.Point(587, 189);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(75, 23);
             this.submitButton.TabIndex = 62;
@@ -184,12 +191,85 @@
             this.profilePicture.TabIndex = 63;
             this.profilePicture.TabStop = false;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(483, 572);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(102, 13);
+            this.label5.TabIndex = 64;
+            this.label5.Text = "Special Features";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(310, 629);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 13);
+            this.label6.TabIndex = 65;
+            this.label6.Text = "Most Popular Post";
+            // 
+            // popularPostFetchButton
+            // 
+            this.popularPostFetchButton.Location = new System.Drawing.Point(426, 624);
+            this.popularPostFetchButton.Name = "popularPostFetchButton";
+            this.popularPostFetchButton.Size = new System.Drawing.Size(75, 23);
+            this.popularPostFetchButton.TabIndex = 66;
+            this.popularPostFetchButton.Text = "Fetch";
+            this.popularPostFetchButton.UseVisualStyleBackColor = true;
+            this.popularPostFetchButton.Click += new System.EventHandler(this.popularPostFetchButton_Click);
+            // 
+            // popularPostListBox
+            // 
+            this.popularPostListBox.FormattingEnabled = true;
+            this.popularPostListBox.Location = new System.Drawing.Point(313, 653);
+            this.popularPostListBox.Name = "popularPostListBox";
+            this.popularPostListBox.Size = new System.Drawing.Size(188, 95);
+            this.popularPostListBox.TabIndex = 67;
+            // 
+            // statsListBox
+            // 
+            this.statsListBox.FormattingEnabled = true;
+            this.statsListBox.Location = new System.Drawing.Point(581, 653);
+            this.statsListBox.Name = "statsListBox";
+            this.statsListBox.Size = new System.Drawing.Size(188, 95);
+            this.statsListBox.TabIndex = 70;
+            // 
+            // statsFetchButton
+            // 
+            this.statsFetchButton.Location = new System.Drawing.Point(694, 624);
+            this.statsFetchButton.Name = "statsFetchButton";
+            this.statsFetchButton.Size = new System.Drawing.Size(75, 23);
+            this.statsFetchButton.TabIndex = 69;
+            this.statsFetchButton.Text = "Fetch";
+            this.statsFetchButton.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(578, 629);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(98, 13);
+            this.label7.TabIndex = 68;
+            this.label7.Text = "Yearly Statistics";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(958, 682);
+            this.ClientSize = new System.Drawing.Size(1036, 810);
+            this.Controls.Add(this.statsListBox);
+            this.Controls.Add(this.statsFetchButton);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.popularPostListBox);
+            this.Controls.Add(this.popularPostFetchButton);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.profilePicture);
             this.Controls.Add(this.submitButton);
             this.Controls.Add(this.postTextBox);
@@ -229,6 +309,13 @@
         private System.Windows.Forms.RichTextBox postTextBox;
         private System.Windows.Forms.Button submitButton;
         private System.Windows.Forms.PictureBox profilePicture;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button popularPostFetchButton;
+        private System.Windows.Forms.ListBox popularPostListBox;
+        private System.Windows.Forms.ListBox statsListBox;
+        private System.Windows.Forms.Button statsFetchButton;
+        private System.Windows.Forms.Label label7;
     }
 }
 

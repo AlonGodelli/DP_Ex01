@@ -31,8 +31,29 @@ namespace FacebookLogic
                     userPostsList.Add(post.Message);
                 }
             }
-
             return userPostsList;
+        }
+
+        public static Post FetchMostPopularPost()
+        {
+            Post currentMostPopularPost = null;
+
+            foreach (Post post in loggedInUser.Posts)
+            {
+                if (post.Message != null)
+                {
+                    if (currentMostPopularPost == null)
+                    {
+                        currentMostPopularPost = post;
+                    }
+                    else if (post.Comments.Count > currentMostPopularPost.Comments.Count)
+                    {
+                        currentMostPopularPost = post;
+                    }
+                }
+            }
+
+            return currentMostPopularPost;
         }
 
         public static List<String> FetchAlbumsNames()
@@ -93,13 +114,14 @@ namespace FacebookLogic
         {
             List<String> userGroupsList = new List<String>();
 
-            foreach (Group group in loggedInUser.Groups) // ?????????????????????????????????
+            foreach (Group group in loggedInUser.Groups)
             {
                 userGroupsList.Add(group.Name);
             }
 
             return userGroupsList;
         }
+
 
         public static List<String> fetchLikedPages()
         {
