@@ -9,7 +9,7 @@ using FacebookLogic;
 
 namespace FacebookLogic
 {
-    public abstract class FacebookLogicManagment
+    public abstract class LogicManagment
     {
         public static User loggedInUser { get; set; }
 

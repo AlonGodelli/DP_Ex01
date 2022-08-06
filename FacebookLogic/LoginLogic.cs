@@ -8,7 +8,7 @@ using FacebookWrapper;
 
 namespace FacebookLogic
 {
-    public class LoginLogic : FacebookLogicManagment
+    public class LoginLogic : LogicManagment
     {
         public static LoginResult loginResult { get; set; }
 

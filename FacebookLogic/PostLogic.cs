@@ -8,7 +8,7 @@ using FacebookWrapper.ObjectModel;
 
 namespace FacebookLogic
 {
-    public class PostLogic : FacebookLogicManagment
+    public class PostLogic : LogicManagment
     {
         public static void Post(string i_Text)
         {

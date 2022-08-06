@@ -8,7 +8,7 @@ using FacebookWrapper;
 
 namespace FacebookLogic
 {
-    public class FetchLogic : FacebookLogicManagment
+    public class FetchLogic : LogicManagment
     {
         public static string FetchProfilePicture()
         {
