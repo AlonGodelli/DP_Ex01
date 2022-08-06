@@ -15,7 +15,6 @@ namespace BasicFacebookFeatures
 {
     public partial class FormMain : Form
     {
-        public User loggedInUser { get; set; }
         public FormMain()
         {
             InitializeComponent();
