@@ -28,6 +28,7 @@ namespace BasicFacebookFeatures
 
             if (isLogInSucceeded == true)
             {
+                this.ClientSize = new System.Drawing.Size(1050, 715);
                 buttonLogin.Text = $"Logged in as {FacebookLogic.FetchLogic.FetchUserName()}";
                 profilePicture.LoadAsync(FacebookLogic.FetchLogic.FetchProfilePicture());
             }
@@ -99,7 +100,14 @@ namespace BasicFacebookFeatures
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            //FacebookLogic.PostLogic.Post(this.postTextBox.Text);
+            try
+            {
+                FacebookLogic.PostLogic.Post(this.postTextBox.Text);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Can't post");
+            }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -151,7 +159,6 @@ namespace BasicFacebookFeatures
 
         private void displaySelectedAlbum()
         {
-            pictureBoxFetchItems.Visible = true;
             if (listBox1.SelectedItems.Count == 1)
             {
                 string selectedAlbumPicture = FacebookLogic.FetchLogic.FetchSelectedAlbumPicture(listBox1.SelectedItem.ToString());
@@ -168,7 +175,6 @@ namespace BasicFacebookFeatures
 
         private void displaySelectedLikedPage()
         {
-            pictureBoxFetchItems.Visible = true;
             if (listBox1.SelectedItems.Count == 1)
             {
                 string selectedLikedPagePicture = FacebookLogic.FetchLogic.FetchSelectedLikedPage(listBox1.SelectedItem.ToString());
@@ -188,10 +194,7 @@ namespace BasicFacebookFeatures
             List<string> userPostsList;
 
             listBox1.Items.Clear();
-            pictureBoxFetchItems.Visible = false;
-
             userPostsList = FacebookLogic.FetchLogic.FetchUserPosts();
-
             foreach (string message in userPostsList)
             {
                 if (message != null)
@@ -241,6 +244,7 @@ namespace BasicFacebookFeatures
                     dataPoint.YValues[0] = postCountByYear[fromYear.ToString()];
                     fromYear++;
                 }
+                this.chart1.Titles[0].Text = $"# of Posts Per Year ({FacebookLogic.FetchLogic.FetchUserName()})";
             }
             else
             {
@@ -282,9 +286,7 @@ namespace BasicFacebookFeatures
 
             listBox1.Items.Clear();
             listBox1.DisplayMember = "Name";
-
             userGroupsList = FacebookLogic.FetchLogic.FetchUserGroupsNames();
-
             foreach (string group in userGroupsList)
             {
                 listBox1.Items.Add(group);
@@ -302,9 +304,7 @@ namespace BasicFacebookFeatures
 
             listBox1.Items.Clear();
             listBox1.DisplayMember = "Name";
-
             userLikedPages = FacebookLogic.FetchLogic.FetchLikedPages();
-
             foreach (string page in userLikedPages)
             {
                 listBox1.Items.Add(page);

@@ -242,7 +242,7 @@
             this.popularPostListBox.FormattingEnabled = true;
             this.popularPostListBox.Location = new System.Drawing.Point(243, 424);
             this.popularPostListBox.Name = "popularPostListBox";
-            this.popularPostListBox.Size = new System.Drawing.Size(251, 212);
+            this.popularPostListBox.Size = new System.Drawing.Size(268, 212);
             this.popularPostListBox.TabIndex = 67;
             // 
             // statsFetchButton
@@ -273,7 +273,7 @@
             legend1.Enabled = false;
             legend1.Name = "numOfPosts";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(575, 424);
+            this.chart1.Location = new System.Drawing.Point(540, 424);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.IsXValueIndexed = true;
@@ -310,11 +310,11 @@
             series1.Points.Add(dataPoint10);
             series1.YValuesPerPoint = 4;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(281, 212);
+            this.chart1.Size = new System.Drawing.Size(456, 212);
             this.chart1.TabIndex = 71;
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
-            title1.Text = "# of Posts Per Year";
+            title1.Text = "# of Posts Per Year (Example, press fetch to see yours)";
             this.chart1.Titles.Add(title1);
             this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
@@ -323,7 +323,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1045, 711);
+            this.ClientSize = new System.Drawing.Size(216, 122);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.statsFetchButton);
             this.Controls.Add(this.label7);
