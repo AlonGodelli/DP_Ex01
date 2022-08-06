@@ -230,8 +230,6 @@ namespace BasicFacebookFeatures
             listBox1.Items.Clear();
             postCountByYear = FacebookLogic.FetchLogic.FetchPostActivityStatistic();
             int fromYear = 2009;
-            int toYear = 2022;
-            var sortedDict = from entry in postCountByYear orderby entry.Value ascending select entry;
 
             if (postCountByYear != null)
             {
