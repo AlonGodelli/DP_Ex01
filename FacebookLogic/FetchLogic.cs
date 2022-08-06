@@ -123,7 +123,7 @@ namespace FacebookLogic
         }
 
 
-        public static List<String> fetchLikedPages()
+        public static List<String> FetchLikedPages()
         {
             List<String> likedPages = new List<String>();
 
@@ -135,7 +135,7 @@ namespace FacebookLogic
             return likedPages;
         }
 
-        public static IDictionary<string, int> postActivityStatistic()
+        public static IDictionary<string, int> FetchPostActivityStatistic()
         {
             IDictionary<string, int> postCountByYear = new Dictionary<string, int>();
             int fromYear = 2009;
@@ -161,7 +161,7 @@ namespace FacebookLogic
             return postCountByYear;
         }
 
-        public static IDictionary<string, int> photosActivityStatistic()
+        public static IDictionary<string, int> FetchPhotosActivityStatistic()
         {
             IDictionary<string, int> postCountByYear = new Dictionary<string, int>();
             int fromYear = 2009;
@@ -173,7 +173,6 @@ namespace FacebookLogic
             {
                 try
                 {
-
                     postCountByYear[(photo.CreatedTime.ToString()).Substring(6, 4)] += 1;
                 }
                 catch

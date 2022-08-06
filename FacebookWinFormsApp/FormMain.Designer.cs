@@ -28,6 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "10,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "20,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "17,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "15,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint9 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "10,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint10 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,8 +62,10 @@
             this.statsListBox = new System.Windows.Forms.ListBox();
             this.statsFetchButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFetchItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonLogin
@@ -232,10 +248,11 @@
             // statsListBox
             // 
             this.statsListBox.FormattingEnabled = true;
-            this.statsListBox.Location = new System.Drawing.Point(581, 653);
+            this.statsListBox.Location = new System.Drawing.Point(787, 515);
             this.statsListBox.Name = "statsListBox";
             this.statsListBox.Size = new System.Drawing.Size(188, 95);
             this.statsListBox.TabIndex = 70;
+            this.statsListBox.SelectedIndexChanged += new System.EventHandler(this.statsListBox_SelectedIndexChanged);
             // 
             // statsFetchButton
             // 
@@ -245,6 +262,7 @@
             this.statsFetchButton.TabIndex = 69;
             this.statsFetchButton.Text = "Fetch";
             this.statsFetchButton.UseVisualStyleBackColor = true;
+            this.statsFetchButton.Click += new System.EventHandler(this.statsFetchButton_Click);
             // 
             // label7
             // 
@@ -257,12 +275,65 @@
             this.label7.Text = "Yearly Statistics";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Enabled = false;
+            legend1.Name = "numOfPosts";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(581, 653);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.IsXValueIndexed = true;
+            series1.Legend = "numOfPosts";
+            series1.Name = "Posts";
+            dataPoint1.AxisLabel = "";
+            dataPoint1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
+            dataPoint1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            dataPoint1.IsValueShownAsLabel = true;
+            dataPoint1.Label = "";
+            dataPoint1.LabelFormat = "";
+            dataPoint1.LabelToolTip = "";
+            dataPoint1.LegendText = "";
+            dataPoint2.IsValueShownAsLabel = true;
+            dataPoint3.IsValueShownAsLabel = true;
+            dataPoint4.IsValueShownAsLabel = true;
+            dataPoint5.IsValueShownAsLabel = true;
+            dataPoint6.IsValueShownAsLabel = true;
+            dataPoint7.IsValueShownAsLabel = true;
+            dataPoint8.IsValueShownAsLabel = true;
+            dataPoint9.AxisLabel = "";
+            dataPoint9.IsValueShownAsLabel = true;
+            dataPoint9.Label = "";
+            dataPoint10.IsValueShownAsLabel = true;
+            series1.Points.Add(dataPoint1);
+            series1.Points.Add(dataPoint2);
+            series1.Points.Add(dataPoint3);
+            series1.Points.Add(dataPoint4);
+            series1.Points.Add(dataPoint5);
+            series1.Points.Add(dataPoint6);
+            series1.Points.Add(dataPoint7);
+            series1.Points.Add(dataPoint8);
+            series1.Points.Add(dataPoint9);
+            series1.Points.Add(dataPoint10);
+            series1.YValuesPerPoint = 4;
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(281, 206);
+            this.chart1.TabIndex = 71;
+            this.chart1.Text = "chart1";
+            title1.Name = "Title1";
+            title1.Text = "# of Posts Per Year";
+            this.chart1.Titles.Add(title1);
+            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1036, 810);
+            this.ClientSize = new System.Drawing.Size(1036, 901);
+            this.Controls.Add(this.chart1);
             this.Controls.Add(this.statsListBox);
             this.Controls.Add(this.statsFetchButton);
             this.Controls.Add(this.label7);
@@ -289,6 +360,7 @@
             this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFetchItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -316,6 +388,7 @@
         private System.Windows.Forms.ListBox statsListBox;
         private System.Windows.Forms.Button statsFetchButton;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 
