@@ -210,9 +210,7 @@ namespace BasicFacebookFeatures
         {
             Post mostPopularPost = null;
 
-            listBox1.Items.Clear();
             mostPopularPost = FacebookLogic.FetchLogic.FetchMostPopularPost();
-
             if (mostPopularPost != null)
             {
                 popularPostListBox.Items.Add($"Post: {mostPopularPost.Message}");
@@ -227,7 +225,6 @@ namespace BasicFacebookFeatures
         private void getYearlyPostActivityStats()
         {
             IDictionary<string, int> postCountByYear = null;
-            listBox1.Items.Clear();
             postCountByYear = FacebookLogic.FetchLogic.FetchPostActivityStatistic();
             int fromYear = 2009;
 
