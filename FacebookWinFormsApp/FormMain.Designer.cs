@@ -59,7 +59,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.popularPostFetchButton = new System.Windows.Forms.Button();
             this.popularPostListBox = new System.Windows.Forms.ListBox();
-            this.statsListBox = new System.Windows.Forms.ListBox();
             this.statsFetchButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -71,10 +70,9 @@
             // buttonLogin
             // 
             this.buttonLogin.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonLogin.Location = new System.Drawing.Point(26, 88);
-            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonLogin.Location = new System.Drawing.Point(17, 57);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(273, 35);
+            this.buttonLogin.Size = new System.Drawing.Size(182, 23);
             this.buttonLogin.TabIndex = 36;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
@@ -83,10 +81,9 @@
             // buttonLogout
             // 
             this.buttonLogout.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonLogout.Location = new System.Drawing.Point(26, 132);
-            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonLogout.Location = new System.Drawing.Point(17, 86);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(273, 35);
+            this.buttonLogout.Size = new System.Drawing.Size(182, 23);
             this.buttonLogout.TabIndex = 52;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = false;
@@ -96,10 +93,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 43);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(14, 28);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(269, 20);
+            this.label1.Size = new System.Drawing.Size(185, 13);
             this.label1.TabIndex = 53;
             this.label1.Text = "Welcome to our Facebook app!";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -115,30 +111,27 @@
             "Events",
             "Groups",
             "Liked Pages"});
-            this.comboBox1.Location = new System.Drawing.Point(1148, 85);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.comboBox1.Location = new System.Drawing.Point(733, 55);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(180, 28);
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 54;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(910, 90);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(575, 58);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(225, 20);
+            this.label2.Size = new System.Drawing.Size(153, 13);
             this.label2.TabIndex = 55;
             this.label2.Text = "Please choose what to display:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // fetchButton
             // 
-            this.fetchButton.Location = new System.Drawing.Point(1336, 81);
-            this.fetchButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.fetchButton.Location = new System.Drawing.Point(859, 53);
             this.fetchButton.Name = "fetchButton";
-            this.fetchButton.Size = new System.Drawing.Size(112, 35);
+            this.fetchButton.Size = new System.Drawing.Size(75, 23);
             this.fetchButton.TabIndex = 56;
             this.fetchButton.Text = "Fetch";
             this.fetchButton.UseVisualStyleBackColor = true;
@@ -147,21 +140,18 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 20;
-            this.listBox1.Location = new System.Drawing.Point(858, 154);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.listBox1.Location = new System.Drawing.Point(540, 100);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(414, 264);
+            this.listBox1.Size = new System.Drawing.Size(277, 199);
             this.listBox1.TabIndex = 57;
             this.listBox1.Click += new System.EventHandler(this.listBoxSelectedIndexChanged);
             // 
             // pictureBoxFetchItems
             // 
             this.pictureBoxFetchItems.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBoxFetchItems.Location = new System.Drawing.Point(1282, 154);
-            this.pictureBoxFetchItems.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBoxFetchItems.Location = new System.Drawing.Point(823, 100);
             this.pictureBoxFetchItems.Name = "pictureBoxFetchItems";
-            this.pictureBoxFetchItems.Size = new System.Drawing.Size(260, 266);
+            this.pictureBoxFetchItems.Size = new System.Drawing.Size(173, 199);
             this.pictureBoxFetchItems.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxFetchItems.TabIndex = 58;
             this.pictureBoxFetchItems.TabStop = false;
@@ -171,10 +161,9 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1112, 41);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(717, 28);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 20);
+            this.label3.Size = new System.Drawing.Size(100, 13);
             this.label3.TabIndex = 59;
             this.label3.Text = "User Information";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -183,29 +172,26 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(558, 43);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(318, 28);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(118, 20);
+            this.label4.Size = new System.Drawing.Size(80, 13);
             this.label4.TabIndex = 60;
             this.label4.Text = "Write a post:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // postTextBox
             // 
-            this.postTextBox.Location = new System.Drawing.Point(418, 154);
-            this.postTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.postTextBox.Location = new System.Drawing.Point(243, 55);
             this.postTextBox.Name = "postTextBox";
-            this.postTextBox.Size = new System.Drawing.Size(400, 266);
+            this.postTextBox.Size = new System.Drawing.Size(268, 244);
             this.postTextBox.TabIndex = 61;
             this.postTextBox.Text = "";
             // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(706, 78);
-            this.submitButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.submitButton.Location = new System.Drawing.Point(436, 276);
             this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(112, 35);
+            this.submitButton.Size = new System.Drawing.Size(75, 23);
             this.submitButton.TabIndex = 62;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
@@ -214,10 +200,9 @@
             // profilePicture
             // 
             this.profilePicture.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.profilePicture.Location = new System.Drawing.Point(26, 191);
-            this.profilePicture.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.profilePicture.Location = new System.Drawing.Point(17, 124);
             this.profilePicture.Name = "profilePicture";
-            this.profilePicture.Size = new System.Drawing.Size(274, 262);
+            this.profilePicture.Size = new System.Drawing.Size(183, 175);
             this.profilePicture.TabIndex = 63;
             this.profilePicture.TabStop = false;
             // 
@@ -225,30 +210,28 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(525, 524);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(489, 355);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(151, 20);
+            this.label5.Size = new System.Drawing.Size(102, 13);
             this.label5.TabIndex = 64;
             this.label5.Text = "Special Features";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(266, 612);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(303, 400);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(164, 20);
+            this.label6.Size = new System.Drawing.Size(110, 13);
             this.label6.TabIndex = 65;
             this.label6.Text = "Most Popular Post";
             // 
             // popularPostFetchButton
             // 
-            this.popularPostFetchButton.Location = new System.Drawing.Point(440, 604);
-            this.popularPostFetchButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.popularPostFetchButton.Location = new System.Drawing.Point(419, 395);
             this.popularPostFetchButton.Name = "popularPostFetchButton";
-            this.popularPostFetchButton.Size = new System.Drawing.Size(112, 35);
+            this.popularPostFetchButton.Size = new System.Drawing.Size(75, 23);
             this.popularPostFetchButton.TabIndex = 66;
             this.popularPostFetchButton.Text = "Fetch";
             this.popularPostFetchButton.UseVisualStyleBackColor = true;
@@ -257,30 +240,16 @@
             // popularPostListBox
             // 
             this.popularPostListBox.FormattingEnabled = true;
-            this.popularPostListBox.ItemHeight = 20;
-            this.popularPostListBox.Location = new System.Drawing.Point(271, 649);
-            this.popularPostListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.popularPostListBox.Location = new System.Drawing.Point(243, 424);
             this.popularPostListBox.Name = "popularPostListBox";
-            this.popularPostListBox.Size = new System.Drawing.Size(280, 144);
+            this.popularPostListBox.Size = new System.Drawing.Size(251, 212);
             this.popularPostListBox.TabIndex = 67;
-            // 
-            // statsListBox
-            // 
-            this.statsListBox.FormattingEnabled = true;
-            this.statsListBox.ItemHeight = 20;
-            this.statsListBox.Location = new System.Drawing.Point(981, 436);
-            this.statsListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.statsListBox.Name = "statsListBox";
-            this.statsListBox.Size = new System.Drawing.Size(280, 144);
-            this.statsListBox.TabIndex = 70;
-            this.statsListBox.SelectedIndexChanged += new System.EventHandler(this.statsListBox_SelectedIndexChanged);
             // 
             // statsFetchButton
             // 
-            this.statsFetchButton.Location = new System.Drawing.Point(842, 604);
-            this.statsFetchButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.statsFetchButton.Location = new System.Drawing.Point(781, 395);
             this.statsFetchButton.Name = "statsFetchButton";
-            this.statsFetchButton.Size = new System.Drawing.Size(112, 35);
+            this.statsFetchButton.Size = new System.Drawing.Size(75, 23);
             this.statsFetchButton.TabIndex = 69;
             this.statsFetchButton.Text = "Fetch";
             this.statsFetchButton.UseVisualStyleBackColor = true;
@@ -290,10 +259,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(668, 612);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(665, 400);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(147, 20);
+            this.label7.Size = new System.Drawing.Size(98, 13);
             this.label7.TabIndex = 68;
             this.label7.Text = "Yearly Statistics";
             this.label7.Click += new System.EventHandler(this.label7_Click);
@@ -305,8 +273,7 @@
             legend1.Enabled = false;
             legend1.Name = "numOfPosts";
             this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(673, 649);
-            this.chart1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.chart1.Location = new System.Drawing.Point(575, 424);
             this.chart1.Name = "chart1";
             series1.ChartArea = "ChartArea1";
             series1.IsXValueIndexed = true;
@@ -343,7 +310,7 @@
             series1.Points.Add(dataPoint10);
             series1.YValuesPerPoint = 4;
             this.chart1.Series.Add(series1);
-            this.chart1.Size = new System.Drawing.Size(422, 317);
+            this.chart1.Size = new System.Drawing.Size(281, 212);
             this.chart1.TabIndex = 71;
             this.chart1.Text = "chart1";
             title1.Name = "Title1";
@@ -353,12 +320,11 @@
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1554, 1050);
+            this.ClientSize = new System.Drawing.Size(1045, 711);
             this.Controls.Add(this.chart1);
-            this.Controls.Add(this.statsListBox);
             this.Controls.Add(this.statsFetchButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.popularPostListBox);
@@ -378,7 +344,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.buttonLogin);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -410,7 +375,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button popularPostFetchButton;
         private System.Windows.Forms.ListBox popularPostListBox;
-        private System.Windows.Forms.ListBox statsListBox;
         private System.Windows.Forms.Button statsFetchButton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
