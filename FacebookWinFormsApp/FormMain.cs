@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 using FacebookLogic;
@@ -223,6 +224,35 @@ namespace BasicFacebookFeatures
             }
         }
 
+        private void getYearlyPostActivityStats()
+        {
+            IDictionary<string, int> postCountByYear = null;
+            listBox1.Items.Clear();
+            postCountByYear = FacebookLogic.FetchLogic.FetchPostActivityStatistic();
+            int fromYear = 2009;
+            int toYear = 2022;
+            var sortedDict = from entry in postCountByYear orderby entry.Value ascending select entry;
+
+            if (postCountByYear != null)
+            {
+                //for (int i = fromYear; i <= toYear; i++)
+                //{
+                //    statsListBox.Items.Add($"Posts from {i} : {postCountByYear[i.ToString()]}");
+                //}
+                foreach (DataPoint dataPoint in chart1.Series[0].Points)
+                {
+                    chart1.ChartAreas[0].RecalculateAxesScale();
+                    dataPoint.AxisLabel = fromYear.ToString();
+                    dataPoint.YValues[0] = postCountByYear[fromYear.ToString()];
+                    fromYear++;
+                }
+            }
+            else
+            {
+                MessageBox.Show("No Posts to retrieve");
+            }
+        }
+
         private void getEvents()
         {
             List<String> userEventsList;
@@ -278,7 +308,7 @@ namespace BasicFacebookFeatures
             listBox1.Items.Clear();
             listBox1.DisplayMember = "Name";
 
-            userLikedPages = FacebookLogic.FetchLogic.fetchLikedPages();
+            userLikedPages = FacebookLogic.FetchLogic.FetchLikedPages();
 
             foreach (string page in userLikedPages)
             {
@@ -299,6 +329,21 @@ namespace BasicFacebookFeatures
         private void popularPostFetchButton_Click(object sender, EventArgs e)
         {
             getMostPopularPost();
+        }
+
+        private void statsFetchButton_Click(object sender, EventArgs e)
+        {
+            getYearlyPostActivityStats();
+        }
+
+        private void statsListBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
