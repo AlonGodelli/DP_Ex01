@@ -43,11 +43,6 @@ namespace BasicFacebookFeatures
             buttonLogin.Text = "Login";
         }
 
-         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -76,7 +71,6 @@ namespace BasicFacebookFeatures
                     break;
             }
         }
-
        
         private void submitButton_Click(object sender, EventArgs e)
         {
@@ -88,11 +82,6 @@ namespace BasicFacebookFeatures
             {
                 MessageBox.Show("Can't post");
             }
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void listBoxSelectedIndexChanged(object sender, EventArgs e)
@@ -281,7 +270,6 @@ namespace BasicFacebookFeatures
                 MessageBox.Show("No liked pages to retrieve");
             }
         }
-
 
         private void popularPostFetchButton_Click(object sender, EventArgs e)
         {
