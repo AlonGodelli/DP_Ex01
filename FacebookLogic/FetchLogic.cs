@@ -122,7 +122,6 @@ namespace FacebookLogic
             return userGroupsList;
         }
 
-
         public static List<String> FetchLikedPages()
         {
             List<String> likedPages = new List<String>();
