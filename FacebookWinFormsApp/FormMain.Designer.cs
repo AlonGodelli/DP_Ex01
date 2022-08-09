@@ -98,7 +98,7 @@
             this.label1.Size = new System.Drawing.Size(185, 13);
             this.label1.TabIndex = 53;
             this.label1.Text = "Welcome to our Facebook app!";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBox1
             // 
@@ -115,7 +115,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 54;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            //this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -155,7 +155,7 @@
             this.pictureBoxFetchItems.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxFetchItems.TabIndex = 58;
             this.pictureBoxFetchItems.TabStop = false;
-            this.pictureBoxFetchItems.Click += new System.EventHandler(this.pictureBox1_Click);
+            //this.pictureBoxFetchItems.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label3
             // 
@@ -166,7 +166,7 @@
             this.label3.Size = new System.Drawing.Size(100, 13);
             this.label3.TabIndex = 59;
             this.label3.Text = "User Information";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+            //this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -177,7 +177,7 @@
             this.label4.Size = new System.Drawing.Size(80, 13);
             this.label4.TabIndex = 60;
             this.label4.Text = "Write a post:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            //this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // postTextBox
             // 
@@ -215,7 +215,7 @@
             this.label5.Size = new System.Drawing.Size(102, 13);
             this.label5.TabIndex = 64;
             this.label5.Text = "Special Features";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
+            //this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -264,7 +264,7 @@
             this.label7.Size = new System.Drawing.Size(98, 13);
             this.label7.TabIndex = 68;
             this.label7.Text = "Yearly Statistics";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
+            //this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // chart1
             // 
@@ -316,7 +316,7 @@
             title1.Name = "Title1";
             title1.Text = "# of Posts Per Year (Example, press fetch to see yours)";
             this.chart1.Titles.Add(title1);
-            this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            //this.chart1.Click += new System.EventHandler(this.chart1_Click);
             // 
             // FormMain
             // 
@@ -347,7 +347,7 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.FormMain_Load);
+            //this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFetchItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();

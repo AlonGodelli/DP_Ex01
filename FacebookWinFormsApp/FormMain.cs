@@ -43,17 +43,7 @@ namespace BasicFacebookFeatures
             buttonLogin.Text = "Login";
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormMain_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
@@ -87,16 +77,7 @@ namespace BasicFacebookFeatures
             }
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void submitButton_Click(object sender, EventArgs e)
         {
             try
@@ -126,7 +107,6 @@ namespace BasicFacebookFeatures
                 case "Events":
                     break;
                 case "Groups":
-                    //displaySelectedGroup();
                     break;
                 case "Liked Pages":
                     displaySelectedLikedPage();
@@ -232,10 +212,6 @@ namespace BasicFacebookFeatures
 
             if (postCountByYear != null)
             {
-                //for (int i = fromYear; i <= toYear; i++)
-                //{
-                //    statsListBox.Items.Add($"Posts from {i} : {postCountByYear[i.ToString()]}");
-                //}
                 foreach (DataPoint dataPoint in chart1.Series[0].Points)
                 {
                     chart1.ChartAreas[0].RecalculateAxesScale();
@@ -269,15 +245,6 @@ namespace BasicFacebookFeatures
                 MessageBox.Show("No Events to retrieve");
             }
         }
-
-        //private void displaySelectedGroup()
-        //{
-        //    if (listBoxGroups.SelectedItems.Count == 1)
-        //    {
-        //        Group selectedGroup = listBoxGroups.SelectedItem as Group;
-        //        pictureBoxGroup.LoadAsync(selectedGroup.PictureNormalURL);
-        //    }
-        //}
 
         private void getGroups()
         {
@@ -315,10 +282,6 @@ namespace BasicFacebookFeatures
             }
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void popularPostFetchButton_Click(object sender, EventArgs e)
         {
@@ -328,21 +291,6 @@ namespace BasicFacebookFeatures
         private void statsFetchButton_Click(object sender, EventArgs e)
         {
             getYearlyPostActivityStats();
-        }
-
-        private void statsListBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void chart1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
