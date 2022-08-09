@@ -47,7 +47,7 @@ namespace FacebookLogic
             return isLogInSucceeded;
         }
 
-        public static void Logout() // not work
+        public static void Logout()
         {
             FacebookService.LogoutWithUI();
         }

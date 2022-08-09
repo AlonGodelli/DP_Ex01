@@ -20,9 +20,9 @@ namespace FacebookLogic
             return loggedInUser.Name;
         }
 
-        public static List<String> FetchUserPosts()
+        public static List<string> FetchUserPosts()
         {
-            List<String> userPostsList = new List<String>();
+            List<string> userPostsList = new List<string>();
 
             foreach (Post post in loggedInUser.Posts)
             {
@@ -31,6 +31,7 @@ namespace FacebookLogic
                     userPostsList.Add(post.Message);
                 }
             }
+
             return userPostsList;
         }
 
@@ -56,9 +57,9 @@ namespace FacebookLogic
             return currentMostPopularPost;
         }
 
-        public static List<String> FetchAlbumsNames()
+        public static List<string> FetchAlbumsNames()
         {
-            List<String> userAlbumsList = new List<String>();
+            List<string> userAlbumsList = new List<string>();
 
             foreach (Album album in loggedInUser.Albums)
             {
@@ -98,9 +99,9 @@ namespace FacebookLogic
             return likedPageSource;
         }
 
-        public static List<String> FetchEvents()
+        public static List<string> FetchEvents()
         {
-            List<String> userEvents = new List<String>();
+            List<string> userEvents = new List<string>();
 
             foreach (Event fbEvent in loggedInUser.Events)
             {
@@ -110,9 +111,9 @@ namespace FacebookLogic
             return userEvents;
         }
 
-        public static List<String> FetchUserGroupsNames()
+        public static List<string> FetchUserGroupsNames()
         {
-            List<String> userGroupsList = new List<String>();
+            List<string> userGroupsList = new List<string>();
 
             foreach (Group group in loggedInUser.Groups)
             {
@@ -122,9 +123,9 @@ namespace FacebookLogic
             return userGroupsList;
         }
 
-        public static List<String> FetchLikedPages()
+        public static List<string> FetchLikedPages()
         {
-            List<String> likedPages = new List<String>();
+            List<string> likedPages = new List<string>();
 
             foreach (Page page in loggedInUser.LikedPages)
             {
@@ -148,7 +149,7 @@ namespace FacebookLogic
                 {
                     try
                     {
-                        postCountByYear[(post.CreatedTime.ToString()).Substring(6, 4)] += 1;
+                        postCountByYear[post.CreatedTime.ToString().Substring(6, 4)] += 1;
                     }
                     catch
                     {
@@ -168,11 +169,11 @@ namespace FacebookLogic
 
             initActivityStatisticDictionary(fromYear, toYear, postCountByYear);
 
-            foreach (Photo photo in loggedInUser.PhotosTaggedIn) // not work as expected
+            foreach (Photo photo in loggedInUser.PhotosTaggedIn)
             {
                 try
                 {
-                    postCountByYear[(photo.CreatedTime.ToString()).Substring(6, 4)] += 1;
+                    postCountByYear[photo.CreatedTime.ToString().Substring(6, 4)] += 1;
                 }
                 catch
                 {
@@ -185,7 +186,6 @@ namespace FacebookLogic
 
         private static void initActivityStatisticDictionary(int i_FromYear, int i_ToYear, IDictionary<string, int> io_ActivityStatisticDictionary)
         {
-
             for (int year = i_FromYear; year <= i_ToYear; year++)
             {
                 io_ActivityStatisticDictionary.Add(year.ToString(), 0);

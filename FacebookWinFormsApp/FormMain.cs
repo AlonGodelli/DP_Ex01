@@ -28,6 +28,7 @@ namespace BasicFacebookFeatures
             if (isLogInSucceeded == true)
             {
                 this.ClientSize = new System.Drawing.Size(1050, 715);
+                this.CenterToScreen();
                 buttonLogin.Text = $"Logged in as {FacebookLogic.FetchLogic.FetchUserName()}";
                 profilePicture.LoadAsync(FacebookLogic.FetchLogic.FetchProfilePicture());
             }
@@ -45,7 +46,6 @@ namespace BasicFacebookFeatures
 
         private void label2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void fetchButton_Click(object sender, EventArgs e)
@@ -208,6 +208,7 @@ namespace BasicFacebookFeatures
                     dataPoint.YValues[0] = postCountByYear[fromYear.ToString()];
                     fromYear++;
                 }
+
                 this.chart1.Titles[0].Text = $"# of Posts Per Year ({FacebookLogic.FetchLogic.FetchUserName()})";
             }
             else
@@ -218,7 +219,7 @@ namespace BasicFacebookFeatures
 
         private void getEvents()
         {
-            List<String> userEventsList;
+            List<string> userEventsList;
 
             listBox1.Items.Clear();
             listBox1.DisplayMember = "Name";

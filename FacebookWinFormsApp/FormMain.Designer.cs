@@ -1,6 +1,6 @@
 ﻿namespace BasicFacebookFeatures
 {
-    partial class FormMain
+    public partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -17,6 +17,7 @@
             {
                 components.Dispose();
             }
+
             base.Dispose(disposing);
         }
 
@@ -353,7 +354,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
 		#endregion
@@ -380,4 +380,3 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
-

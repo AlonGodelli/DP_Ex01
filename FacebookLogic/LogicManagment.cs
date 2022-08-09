@@ -12,6 +12,5 @@ namespace FacebookLogic
     public abstract class LogicManagment
     {
         public static User loggedInUser { get; set; }
-
     }
 }
