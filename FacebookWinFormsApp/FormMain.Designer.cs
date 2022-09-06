@@ -29,20 +29,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "10,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "20,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "17,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "15,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint9 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "10,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint10 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint41 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "10,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint42 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "20,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint43 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint44 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "17,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint45 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint46 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint47 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "15,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint48 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint49 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "10,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint50 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.Title title5 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            System.Windows.Forms.Label aboutLabel;
+            System.Windows.Forms.Label emailLabel;
+            System.Windows.Forms.Label localeLabel;
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -63,9 +68,38 @@
             this.statsFetchButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.userBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.aboutTextBox = new System.Windows.Forms.TextBox();
+            this.emailTextBox = new System.Windows.Forms.TextBox();
+            this.localeTextBox = new System.Windows.Forms.TextBox();
+            this.user_eRelationshipStatusBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.user_eRelationshipStatusBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.user_eRelationshipStatusBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            aboutLabel = new System.Windows.Forms.Label();
+            emailLabel = new System.Windows.Forms.Label();
+            localeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFetchItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingNavigator)).BeginInit();
+            this.userBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.user_eRelationshipStatusBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.user_eRelationshipStatusBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.user_eRelationshipStatusBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonLogin
@@ -99,7 +133,6 @@
             this.label1.Size = new System.Drawing.Size(185, 13);
             this.label1.TabIndex = 53;
             this.label1.Text = "Welcome to our Facebook app!";
-            //this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // comboBox1
             // 
@@ -116,7 +149,6 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 54;
-            //this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -156,7 +188,6 @@
             this.pictureBoxFetchItems.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxFetchItems.TabIndex = 58;
             this.pictureBoxFetchItems.TabStop = false;
-            //this.pictureBoxFetchItems.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // label3
             // 
@@ -167,7 +198,6 @@
             this.label3.Size = new System.Drawing.Size(100, 13);
             this.label3.TabIndex = 59;
             this.label3.Text = "User Information";
-            //this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -178,7 +208,6 @@
             this.label4.Size = new System.Drawing.Size(80, 13);
             this.label4.TabIndex = 60;
             this.label4.Text = "Write a post:";
-            //this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // postTextBox
             // 
@@ -216,7 +245,6 @@
             this.label5.Size = new System.Drawing.Size(102, 13);
             this.label5.TabIndex = 64;
             this.label5.Text = "Special Features";
-            //this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label6
             // 
@@ -265,66 +293,252 @@
             this.label7.Size = new System.Drawing.Size(98, 13);
             this.label7.TabIndex = 68;
             this.label7.Text = "Yearly Statistics";
-            //this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Enabled = false;
-            legend1.Name = "numOfPosts";
-            this.chart1.Legends.Add(legend1);
+            chartArea5.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea5);
+            legend5.Enabled = false;
+            legend5.Name = "numOfPosts";
+            this.chart1.Legends.Add(legend5);
             this.chart1.Location = new System.Drawing.Point(540, 424);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.IsXValueIndexed = true;
-            series1.Legend = "numOfPosts";
-            series1.Name = "Posts";
-            dataPoint1.AxisLabel = "";
-            dataPoint1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
-            dataPoint1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            dataPoint1.IsValueShownAsLabel = true;
-            dataPoint1.Label = "";
-            dataPoint1.LabelFormat = "";
-            dataPoint1.LabelToolTip = "";
-            dataPoint1.LegendText = "";
-            dataPoint2.IsValueShownAsLabel = true;
-            dataPoint3.IsValueShownAsLabel = true;
-            dataPoint4.IsValueShownAsLabel = true;
-            dataPoint5.IsValueShownAsLabel = true;
-            dataPoint6.IsValueShownAsLabel = true;
-            dataPoint7.IsValueShownAsLabel = true;
-            dataPoint8.IsValueShownAsLabel = true;
-            dataPoint9.AxisLabel = "";
-            dataPoint9.IsValueShownAsLabel = true;
-            dataPoint9.Label = "";
-            dataPoint10.IsValueShownAsLabel = true;
-            series1.Points.Add(dataPoint1);
-            series1.Points.Add(dataPoint2);
-            series1.Points.Add(dataPoint3);
-            series1.Points.Add(dataPoint4);
-            series1.Points.Add(dataPoint5);
-            series1.Points.Add(dataPoint6);
-            series1.Points.Add(dataPoint7);
-            series1.Points.Add(dataPoint8);
-            series1.Points.Add(dataPoint9);
-            series1.Points.Add(dataPoint10);
-            series1.YValuesPerPoint = 4;
-            this.chart1.Series.Add(series1);
+            series5.ChartArea = "ChartArea1";
+            series5.IsXValueIndexed = true;
+            series5.Legend = "numOfPosts";
+            series5.Name = "Posts";
+            dataPoint41.AxisLabel = "";
+            dataPoint41.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
+            dataPoint41.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            dataPoint41.IsValueShownAsLabel = true;
+            dataPoint41.Label = "";
+            dataPoint41.LabelFormat = "";
+            dataPoint41.LabelToolTip = "";
+            dataPoint41.LegendText = "";
+            dataPoint42.IsValueShownAsLabel = true;
+            dataPoint43.IsValueShownAsLabel = true;
+            dataPoint44.IsValueShownAsLabel = true;
+            dataPoint45.IsValueShownAsLabel = true;
+            dataPoint46.IsValueShownAsLabel = true;
+            dataPoint47.IsValueShownAsLabel = true;
+            dataPoint48.IsValueShownAsLabel = true;
+            dataPoint49.AxisLabel = "";
+            dataPoint49.IsValueShownAsLabel = true;
+            dataPoint49.Label = "";
+            dataPoint50.IsValueShownAsLabel = true;
+            series5.Points.Add(dataPoint41);
+            series5.Points.Add(dataPoint42);
+            series5.Points.Add(dataPoint43);
+            series5.Points.Add(dataPoint44);
+            series5.Points.Add(dataPoint45);
+            series5.Points.Add(dataPoint46);
+            series5.Points.Add(dataPoint47);
+            series5.Points.Add(dataPoint48);
+            series5.Points.Add(dataPoint49);
+            series5.Points.Add(dataPoint50);
+            series5.YValuesPerPoint = 4;
+            this.chart1.Series.Add(series5);
             this.chart1.Size = new System.Drawing.Size(456, 212);
             this.chart1.TabIndex = 71;
             this.chart1.Text = "chart1";
-            title1.Name = "Title1";
-            title1.Text = "# of Posts Per Year (Example, press fetch to see yours)";
-            this.chart1.Titles.Add(title1);
-            //this.chart1.Click += new System.EventHandler(this.chart1_Click);
+            title5.Name = "Title1";
+            title5.Text = "# of Posts Per Year (Example, press fetch to see yours)";
+            this.chart1.Titles.Add(title5);
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataSource = typeof(FacebookWrapper.ObjectModel.User);
+            // 
+            // userBindingNavigator
+            // 
+            this.userBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.userBindingNavigator.BindingSource = this.userBindingSource;
+            this.userBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.userBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.userBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.userBindingNavigatorSaveItem});
+            this.userBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.userBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.userBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.userBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.userBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.userBindingNavigator.Name = "userBindingNavigator";
+            this.userBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.userBindingNavigator.Size = new System.Drawing.Size(1185, 25);
+            this.userBindingNavigator.TabIndex = 72;
+            this.userBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // userBindingNavigatorSaveItem
+            // 
+            this.userBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.userBindingNavigatorSaveItem.Enabled = false;
+            this.userBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("userBindingNavigatorSaveItem.Image")));
+            this.userBindingNavigatorSaveItem.Name = "userBindingNavigatorSaveItem";
+            this.userBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.userBindingNavigatorSaveItem.Text = "Save Data";
+            // 
+            // aboutLabel
+            // 
+            aboutLabel.AutoSize = true;
+            aboutLabel.Location = new System.Drawing.Point(15, 308);
+            aboutLabel.Name = "aboutLabel";
+            aboutLabel.Size = new System.Drawing.Size(38, 13);
+            aboutLabel.TabIndex = 72;
+            aboutLabel.Text = "About:";
+            // 
+            // aboutTextBox
+            // 
+            this.aboutTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "About", true));
+            this.aboutTextBox.Location = new System.Drawing.Point(59, 305);
+            this.aboutTextBox.Name = "aboutTextBox";
+            this.aboutTextBox.Size = new System.Drawing.Size(140, 20);
+            this.aboutTextBox.TabIndex = 73;
+            // 
+            // emailLabel
+            // 
+            emailLabel.AutoSize = true;
+            emailLabel.Location = new System.Drawing.Point(18, 334);
+            emailLabel.Name = "emailLabel";
+            emailLabel.Size = new System.Drawing.Size(35, 13);
+            emailLabel.TabIndex = 73;
+            emailLabel.Text = "Email:";
+            // 
+            // emailTextBox
+            // 
+            this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Email", true));
+            this.emailTextBox.Location = new System.Drawing.Point(59, 331);
+            this.emailTextBox.Name = "emailTextBox";
+            this.emailTextBox.Size = new System.Drawing.Size(141, 20);
+            this.emailTextBox.TabIndex = 74;
+            // 
+            // localeLabel
+            // 
+            localeLabel.AutoSize = true;
+            localeLabel.Location = new System.Drawing.Point(11, 360);
+            localeLabel.Name = "localeLabel";
+            localeLabel.Size = new System.Drawing.Size(42, 13);
+            localeLabel.TabIndex = 74;
+            localeLabel.Text = "Locale:";
+            // 
+            // localeTextBox
+            // 
+            this.localeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Locale", true));
+            this.localeTextBox.Location = new System.Drawing.Point(59, 357);
+            this.localeTextBox.Name = "localeTextBox";
+            this.localeTextBox.Size = new System.Drawing.Size(140, 20);
+            this.localeTextBox.TabIndex = 75;
+            this.localeTextBox.TextChanged += new System.EventHandler(this.localeTextBox_TextChanged);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(216, 122);
+            this.ClientSize = new System.Drawing.Size(1185, 730);
+            this.Controls.Add(localeLabel);
+            this.Controls.Add(this.localeTextBox);
+            this.Controls.Add(emailLabel);
+            this.Controls.Add(this.emailTextBox);
+            this.Controls.Add(aboutLabel);
+            this.Controls.Add(this.aboutTextBox);
+            this.Controls.Add(this.userBindingNavigator);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.statsFetchButton);
             this.Controls.Add(this.label7);
@@ -348,12 +562,19 @@
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            //this.Load += new System.EventHandler(this.FormMain_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFetchItems)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profilePicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingNavigator)).EndInit();
+            this.userBindingNavigator.ResumeLayout(false);
+            this.userBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.user_eRelationshipStatusBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.user_eRelationshipStatusBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.user_eRelationshipStatusBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
 		#endregion
@@ -378,5 +599,25 @@
         private System.Windows.Forms.Button statsFetchButton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.BindingSource userBindingSource;
+        private System.Windows.Forms.BindingNavigator userBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton userBindingNavigatorSaveItem;
+        private System.Windows.Forms.TextBox aboutTextBox;
+        private System.Windows.Forms.TextBox emailTextBox;
+        private System.Windows.Forms.TextBox localeTextBox;
+        private System.Windows.Forms.BindingSource user_eRelationshipStatusBindingSource;
+        private System.Windows.Forms.BindingSource user_eRelationshipStatusBindingSource1;
+        private System.Windows.Forms.BindingSource user_eRelationshipStatusBindingSource2;
     }
 }

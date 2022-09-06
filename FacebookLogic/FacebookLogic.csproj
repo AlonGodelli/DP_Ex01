@@ -37,6 +37,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Properties\DataSources\FacebookWrapper.ObjectModel.User.datasource" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="LogicManagment.cs" />

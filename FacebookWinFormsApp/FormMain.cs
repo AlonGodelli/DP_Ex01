@@ -31,6 +31,9 @@ namespace BasicFacebookFeatures
                 this.CenterToScreen();
                 buttonLogin.Text = $"Logged in as {FacebookLogic.FetchLogic.FetchUserName()}";
                 profilePicture.LoadAsync(FacebookLogic.FetchLogic.FetchProfilePicture());
+                aboutTextBox.Text = (FacebookLogic.FetchLogic.FetchAbout());
+                emailTextBox.Text = (FacebookLogic.FetchLogic.FetchEmail());
+                localeTextBox.Text = (FacebookLogic.FetchLogic.FetchLocale());
             }
             else
             {
@@ -71,7 +74,7 @@ namespace BasicFacebookFeatures
                     break;
             }
         }
-       
+
         private void submitButton_Click(object sender, EventArgs e)
         {
             try
@@ -280,6 +283,16 @@ namespace BasicFacebookFeatures
         private void statsFetchButton_Click(object sender, EventArgs e)
         {
             getYearlyPostActivityStats();
+        }
+
+        private void user_eRelationshipStatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void localeTextBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
