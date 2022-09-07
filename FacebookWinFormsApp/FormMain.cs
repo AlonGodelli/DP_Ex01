@@ -183,14 +183,21 @@ namespace BasicFacebookFeatures
         private void getMostPopularPost()
         {
             Post mostPopularPost = null;
-
-            mostPopularPost = FacebookLogic.FetchLogic.FetchMostPopularPost();
-            if (mostPopularPost != null)
+            try
             {
-                popularPostListBox.Items.Add($"Post: {mostPopularPost.Message}");
-                popularPostListBox.Items.Add($"# of Comments: {mostPopularPost.Comments.Count}");
+                mostPopularPost = FacebookLogic.FetchLogic.FetchMostPopularPost();
+                if (mostPopularPost != null)
+                {
+                    popularPostListBox.Items.Add($"Post: {mostPopularPost.Message}");
+                    popularPostListBox.Items.Add($"# of Comments: {mostPopularPost.Comments.Count}");
+                }
+                else
+                {
+                    MessageBox.Show("No Posts to retrieve");
+                }
             }
-            else
+            
+            catch (Exception)
             {
                 MessageBox.Show("No Posts to retrieve");
             }

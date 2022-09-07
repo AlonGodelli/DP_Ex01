@@ -12,7 +12,7 @@ namespace FacebookLogic
     {
         public static void Post(string i_Text)
         {
-            Status postedStatus = loggedInUser.PostStatus(i_Text);
+            Status postedStatus =  loggedInUser.PostStatus(i_Text);
         }
     }
 }
