@@ -44,24 +44,23 @@ namespace FacebookLogic
         public static Post FetchMostPopularPost()
         {
             Post currentMostPopularPost = null;
+            int limit = 0; // FOR NOT LIMITING FACEBOOK API ==============
 
-            //new Thread(() =>
-            //{
-                foreach (Post post in loggedInUser.Posts)
+            foreach (Post post in loggedInUser.Posts)
+            {
+                if (post.Message != null)
                 {
-                    if (post.Message != null)
+                    if (currentMostPopularPost == null)
                     {
-                        if (currentMostPopularPost == null)
-                        {
-                            currentMostPopularPost = post;
-                        }
-                        else if (post.Comments.Count > currentMostPopularPost.Comments.Count)
-                        {
-                            currentMostPopularPost = post;
-                        }
+                        currentMostPopularPost = post;
+                    }
+                    else if (post.Comments.Count > currentMostPopularPost.Comments.Count)
+                    {
+                        currentMostPopularPost = post;
                     }
                 }
-            //}).Start();
+                if (limit++ > 5) { break; } // FOR NOT LIMITING FACEBOOK API ==============
+            }
 
             return currentMostPopularPost;
         }

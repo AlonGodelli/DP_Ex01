@@ -191,7 +191,10 @@ namespace BasicFacebookFeatures
             {
                 popularPostListBox.Invoke(new Action(() =>
                     {
-                        mostPopularPost = FacebookLogic.FetchLogic.FetchMostPopularPost();
+                        popularPostListBox.Invoke(new Action(() =>
+                        {
+                            mostPopularPost = FacebookLogic.FetchLogic.FetchMostPopularPost();
+                        }));
                         if (mostPopularPost != null)
                         {
                             popularPostListBox.Items.Add($"Post: {mostPopularPost.Message}");
@@ -289,7 +292,9 @@ namespace BasicFacebookFeatures
 
         private void popularPostFetchButton_Click(object sender, EventArgs e)
         {
-            new Thread(getMostPopularPost).Start();
+            new Thread(() => { FacebookLogic.FetchLogic.FetchMostPopularPost(); getMostPopularPost(); }).Start();
+
+            //new Thread(getMostPopularPost).Start();
         }
 
         private void statsFetchButton_Click(object sender, EventArgs e)
