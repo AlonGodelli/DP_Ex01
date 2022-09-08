@@ -10,6 +10,7 @@ using System.Windows.Forms.DataVisualization.Charting;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 using FacebookLogic;
+using System.Threading;
 
 namespace BasicFacebookFeatures
 {
@@ -31,19 +32,10 @@ namespace BasicFacebookFeatures
                 this.ClientSize = new System.Drawing.Size(1050, 715);
                 this.CenterToScreen();
                 buttonLogin.Text = $"Logged in as {FacebookLogic.FetchLogic.FetchUserName()}";
-                //profilePicture.LoadAsync(FacebookLogic.FetchLogic.FetchProfilePicture());
-                //foreach (string locale in localeComboBox.Items)
-                //{
-                //    if (locale == FacebookLogic.FetchLogic.FetchLocale())
-                //    {
-                //        localeComboBox.SelectedItem = locale;
-                //        break;
-                //    }
-                //}
             }
             else
             {
-                MessageBox.Show(" Login Failed");
+                MessageBox.Show("Login Failed");
             }
         }
 
@@ -59,26 +51,32 @@ namespace BasicFacebookFeatures
 
         private void fetchButton_Click(object sender, EventArgs e)
         {
-            switch (this.comboBox1.Text)
+            string selection = this.comboBox1.Text;
+            listBox1.Items.Clear();
+            new Thread(() =>
             {
-                case "Posts":
-                    getPosts();
-                    break;
-                case "Albums":
-                    getAlbums();
-                    break;
-                case "Events":
-                    getEvents();
-                    break;
-                case "Groups":
-                    getGroups();
-                    break;
-                case "Liked Pages":
-                    getLikedPages();
-                    break;
-                default:
-                    break;
-            }
+                switch (selection)
+                {
+                    case "Posts":
+                        getPosts();
+                        break;
+                    case "Albums":
+                        getAlbums();
+                        break;
+                    case "Events":
+                        getEvents();
+                        break;
+                    case "Groups":
+                        getGroups();
+                        break;
+                    case "Liked Pages":
+                        getLikedPages();
+                        break;
+                    default:
+                        break;
+                }
+            }).Start();
+
         }
 
         private void submitButton_Click(object sender, EventArgs e)
@@ -118,14 +116,11 @@ namespace BasicFacebookFeatures
         {
             List<string> userAlbumsList = new List<string>();
 
-            listBox1.Items.Clear();
-            listBox1.DisplayMember = "Name";
-
             userAlbumsList = FacebookLogic.FetchLogic.FetchAlbumsNames();
 
             foreach (string albumName in userAlbumsList)
             {
-                listBox1.Items.Add(albumName);
+                listBox1.Invoke(new Action(() => { listBox1.Items.Add(albumName); }));
             }
 
             if (userAlbumsList.Count == 0)
@@ -170,14 +165,17 @@ namespace BasicFacebookFeatures
         {
             List<string> userPostsList;
 
-            listBox1.Items.Clear();
             userPostsList = FacebookLogic.FetchLogic.FetchUserPosts();
             foreach (string message in userPostsList)
             {
-                if (message != null)
-                {
-                    listBox1.Items.Add(message);
-                }
+                listBox1.Invoke(new Action(() =>
+                    {
+                        if (message != null)
+                        {
+                            listBox1.Items.Add(message);
+                        }
+                    }
+                ));
             }
 
             if (userPostsList.Count == 0)
@@ -191,16 +189,20 @@ namespace BasicFacebookFeatures
             Post mostPopularPost = null;
             try
             {
-                mostPopularPost = FacebookLogic.FetchLogic.FetchMostPopularPost();
-                if (mostPopularPost != null)
-                {
-                    popularPostListBox.Items.Add($"Post: {mostPopularPost.Message}");
-                    popularPostListBox.Items.Add($"# of Comments: {mostPopularPost.Comments.Count}");
-                }
-                else
-                {
-                    MessageBox.Show("No Posts to retrieve");
-                }
+                popularPostListBox.Invoke(new Action(() =>
+                    {
+                        mostPopularPost = FacebookLogic.FetchLogic.FetchMostPopularPost();
+                        if (mostPopularPost != null)
+                        {
+                            popularPostListBox.Items.Add($"Post: {mostPopularPost.Message}");
+                            popularPostListBox.Items.Add($"# of Comments: {mostPopularPost.Comments.Count}");
+                        }
+                        else
+                        {
+                            MessageBox.Show("No Posts to retrieve");
+                        }
+                    }
+                ));
             }
 
             catch (Exception)
@@ -217,15 +219,18 @@ namespace BasicFacebookFeatures
 
             if (postCountByYear != null)
             {
-                foreach (DataPoint dataPoint in chart1.Series[0].Points)
+                chart1.Invoke(new Action(() =>
                 {
-                    chart1.ChartAreas[0].RecalculateAxesScale();
-                    dataPoint.AxisLabel = fromYear.ToString();
-                    dataPoint.YValues[0] = postCountByYear[fromYear.ToString()];
-                    fromYear++;
-                }
+                    foreach (DataPoint dataPoint in chart1.Series[0].Points)
+                    {
+                        chart1.ChartAreas[0].RecalculateAxesScale();
+                        dataPoint.AxisLabel = fromYear.ToString();
+                        dataPoint.YValues[0] = postCountByYear[fromYear.ToString()];
+                        fromYear++;
+                    }
 
-                this.chart1.Titles[0].Text = $"# of Posts Per Year ({FacebookLogic.FetchLogic.FetchUserName()})";
+                    this.chart1.Titles[0].Text = $"# of Posts Per Year ({FacebookLogic.FetchLogic.FetchUserName()})";
+                }));
             }
             else
             {
@@ -237,13 +242,11 @@ namespace BasicFacebookFeatures
         {
             List<string> userEventsList;
 
-            listBox1.Items.Clear();
-            listBox1.DisplayMember = "Name";
             userEventsList = FacebookLogic.FetchLogic.FetchEvents();
 
             foreach (string fbEvent in userEventsList)
             {
-                listBox1.Items.Add(fbEvent);
+                listBox1.Invoke(new Action(() => { listBox1.Items.Add(fbEvent); }));
             }
 
             if (userEventsList.Count == 0)
@@ -256,12 +259,10 @@ namespace BasicFacebookFeatures
         {
             List<string> userGroupsList = new List<string>();
 
-            listBox1.Items.Clear();
-            listBox1.DisplayMember = "Name";
             userGroupsList = FacebookLogic.FetchLogic.FetchUserGroupsNames();
             foreach (string group in userGroupsList)
             {
-                listBox1.Items.Add(group);
+                listBox1.Invoke(new Action(() => { listBox1.Items.Add(group); }));
             }
 
             if (userGroupsList.Count == 0)
@@ -274,12 +275,10 @@ namespace BasicFacebookFeatures
         {
             List<string> userLikedPages = new List<string>();
 
-            listBox1.Items.Clear();
-            listBox1.DisplayMember = "Name";
             userLikedPages = FacebookLogic.FetchLogic.FetchLikedPages();
             foreach (string page in userLikedPages)
             {
-                listBox1.Items.Add(page);
+                listBox1.Invoke(new Action(() => { listBox1.Items.Add(page); }));
             }
 
             if (userLikedPages.Count == 0)
@@ -290,12 +289,12 @@ namespace BasicFacebookFeatures
 
         private void popularPostFetchButton_Click(object sender, EventArgs e)
         {
-            getMostPopularPost();
+            new Thread(getMostPopularPost).Start();
         }
 
         private void statsFetchButton_Click(object sender, EventArgs e)
         {
-            getYearlyPostActivityStats();
+            new Thread(getYearlyPostActivityStats).Start();
         }
 
         private void user_eRelationshipStatusComboBox_SelectedIndexChanged(object sender, EventArgs e)

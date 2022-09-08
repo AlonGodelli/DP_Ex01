@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
+using System.Threading;
 
 namespace FacebookLogic
 {
@@ -44,20 +45,23 @@ namespace FacebookLogic
         {
             Post currentMostPopularPost = null;
 
-            foreach (Post post in loggedInUser.Posts)
-            {
-                if (post.Message != null)
+            //new Thread(() =>
+            //{
+                foreach (Post post in loggedInUser.Posts)
                 {
-                    if (currentMostPopularPost == null)
+                    if (post.Message != null)
                     {
-                        currentMostPopularPost = post;
-                    }
-                    else if (post.Comments.Count > currentMostPopularPost.Comments.Count)
-                    {
-                        currentMostPopularPost = post;
+                        if (currentMostPopularPost == null)
+                        {
+                            currentMostPopularPost = post;
+                        }
+                        else if (post.Comments.Count > currentMostPopularPost.Comments.Count)
+                        {
+                            currentMostPopularPost = post;
+                        }
                     }
                 }
-            }
+            //}).Start();
 
             return currentMostPopularPost;
         }
