@@ -16,7 +16,6 @@ namespace BasicFacebookFeatures
 {
     public partial class FormMain : Form
     {
-        private User m_loggedInUser;
         public FormMain()
         {
             InitializeComponent();
@@ -25,15 +24,14 @@ namespace BasicFacebookFeatures
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            m_loggedInUser = LogicManagment.Instance;
-            bool isLogInSucceeded = LogicManagment.boolLoginResult;
-            userBindingSource.DataSource = m_loggedInUser;
+            bool isLogInSucceeded = LoginLogic.Login(out User loggedInUser);
+            userBindingSource.DataSource = loggedInUser;
 
             if (isLogInSucceeded == true)
             {
                 this.ClientSize = new System.Drawing.Size(1050, 715);
                 this.CenterToScreen();
-                buttonLogin.Text = $"Logged in as {FacebookLogic.FetchLogic.FetchUserName(m_loggedInUser)}";
+                buttonLogin.Text = $"Logged in as {FacebookLogic.FetchLogic.FetchUserName()}";
             }
             else
             {
@@ -43,7 +41,7 @@ namespace BasicFacebookFeatures
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
-            LogicManagment.Logout();
+            FacebookLogic.LoginLogic.Logout();
             buttonLogin.Text = "Login";
         }
 
@@ -118,7 +116,7 @@ namespace BasicFacebookFeatures
         {
             List<string> userAlbumsList = new List<string>();
 
-            userAlbumsList = FacebookLogic.FetchLogic.FetchAlbumsNames(m_loggedInUser);
+            userAlbumsList = FacebookLogic.FetchLogic.FetchAlbumsNames();
 
             foreach (string albumName in userAlbumsList)
             {
@@ -135,7 +133,7 @@ namespace BasicFacebookFeatures
         {
             if (listBox1.SelectedItems.Count == 1)
             {
-                string selectedAlbumPicture = FacebookLogic.FetchLogic.FetchSelectedAlbumPicture(listBox1.SelectedItem.ToString(), m_loggedInUser);
+                string selectedAlbumPicture = FacebookLogic.FetchLogic.FetchSelectedAlbumPicture(listBox1.SelectedItem.ToString());
                 if (selectedAlbumPicture != null)
                 {
                     pictureBoxFetchItems.LoadAsync(selectedAlbumPicture);
@@ -151,7 +149,7 @@ namespace BasicFacebookFeatures
         {
             if (listBox1.SelectedItems.Count == 1)
             {
-                string selectedLikedPagePicture = FacebookLogic.FetchLogic.FetchSelectedLikedPage(listBox1.SelectedItem.ToString(), m_loggedInUser);
+                string selectedLikedPagePicture = FacebookLogic.FetchLogic.FetchSelectedLikedPage(listBox1.SelectedItem.ToString());
                 if (selectedLikedPagePicture != null)
                 {
                     pictureBoxFetchItems.LoadAsync(selectedLikedPagePicture);
@@ -167,7 +165,7 @@ namespace BasicFacebookFeatures
         {
             List<string> userPostsList;
 
-            userPostsList = FacebookLogic.FetchLogic.FetchUserPosts(m_loggedInUser);
+            userPostsList = FacebookLogic.FetchLogic.FetchUserPosts();
             foreach (string message in userPostsList)
             {
                 listBox1.Invoke(new Action(() =>
@@ -195,7 +193,7 @@ namespace BasicFacebookFeatures
                     {
                         popularPostListBox.Invoke(new Action(() =>
                         {
-                            mostPopularPost = FacebookLogic.FetchLogic.FetchMostPopularPost(m_loggedInUser);
+                            mostPopularPost = FacebookLogic.FetchLogic.FetchMostPopularPost();
                         }));
                         if (mostPopularPost != null)
                         {
@@ -219,7 +217,7 @@ namespace BasicFacebookFeatures
         private void getYearlyPostActivityStats()
         {
             IDictionary<string, int> postCountByYear = null;
-            postCountByYear = FacebookLogic.FetchLogic.FetchPostActivityStatistic(m_loggedInUser);
+            postCountByYear = FacebookLogic.FetchLogic.FetchPostActivityStatistic();
             int fromYear = 2009;
 
             if (postCountByYear != null)
@@ -234,7 +232,7 @@ namespace BasicFacebookFeatures
                         fromYear++;
                     }
 
-                    this.chart1.Titles[0].Text = $"# of Posts Per Year ({FacebookLogic.FetchLogic.FetchUserName(m_loggedInUser)})";
+                    this.chart1.Titles[0].Text = $"# of Posts Per Year ({FacebookLogic.FetchLogic.FetchUserName()})";
                 }));
             }
             else
@@ -247,7 +245,7 @@ namespace BasicFacebookFeatures
         {
             List<string> userEventsList;
 
-            userEventsList = FacebookLogic.FetchLogic.FetchEvents(m_loggedInUser);
+            userEventsList = FacebookLogic.FetchLogic.FetchEvents();
 
             foreach (string fbEvent in userEventsList)
             {
@@ -264,7 +262,7 @@ namespace BasicFacebookFeatures
         {
             List<string> userGroupsList = new List<string>();
 
-            userGroupsList = FacebookLogic.FetchLogic.FetchUserGroupsNames(m_loggedInUser);
+            userGroupsList = FacebookLogic.FetchLogic.FetchUserGroupsNames();
             foreach (string group in userGroupsList)
             {
                 listBox1.Invoke(new Action(() => { listBox1.Items.Add(group); }));
@@ -280,7 +278,7 @@ namespace BasicFacebookFeatures
         {
             List<string> userLikedPages = new List<string>();
 
-            userLikedPages = FacebookLogic.FetchLogic.FetchLikedPages(m_loggedInUser);
+            userLikedPages = FacebookLogic.FetchLogic.FetchLikedPages();
             foreach (string page in userLikedPages)
             {
                 listBox1.Invoke(new Action(() => { listBox1.Items.Add(page); }));
@@ -294,7 +292,7 @@ namespace BasicFacebookFeatures
 
         private void popularPostFetchButton_Click(object sender, EventArgs e)
         {
-            new Thread(() => { FacebookLogic.FetchLogic.FetchMostPopularPost(m_loggedInUser); getMostPopularPost(); }).Start();
+            new Thread(() => { FacebookLogic.FetchLogic.FetchMostPopularPost(); getMostPopularPost(); }).Start();
 
             //new Thread(getMostPopularPost).Start();
         }

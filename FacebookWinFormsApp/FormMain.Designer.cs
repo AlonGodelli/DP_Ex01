@@ -32,22 +32,22 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label aboutLabel;
             System.Windows.Forms.Label emailLabel;
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint131 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "10,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint132 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "20,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint133 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint134 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "17,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint135 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint136 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint137 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "15,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint138 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint139 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "10,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint140 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
-            System.Windows.Forms.DataVisualization.Charting.Title title14 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             System.Windows.Forms.Label localeLabel;
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint1 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "10,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint2 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "20,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint3 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint4 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "17,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint5 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint6 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint7 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "15,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint8 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint9 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "10,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.DataPoint dataPoint10 = new System.Windows.Forms.DataVisualization.Charting.DataPoint(0D, "0,0,0,0");
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -99,27 +99,40 @@
             // aboutLabel
             // 
             aboutLabel.AutoSize = true;
-            aboutLabel.Location = new System.Drawing.Point(15, 308);
+            aboutLabel.Location = new System.Drawing.Point(22, 474);
+            aboutLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             aboutLabel.Name = "aboutLabel";
-            aboutLabel.Size = new System.Drawing.Size(38, 13);
+            aboutLabel.Size = new System.Drawing.Size(56, 20);
             aboutLabel.TabIndex = 72;
             aboutLabel.Text = "About:";
             // 
             // emailLabel
             // 
             emailLabel.AutoSize = true;
-            emailLabel.Location = new System.Drawing.Point(18, 334);
+            emailLabel.Location = new System.Drawing.Point(27, 514);
+            emailLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             emailLabel.Name = "emailLabel";
-            emailLabel.Size = new System.Drawing.Size(35, 13);
+            emailLabel.Size = new System.Drawing.Size(52, 20);
             emailLabel.TabIndex = 73;
             emailLabel.Text = "Email:";
+            // 
+            // localeLabel
+            // 
+            localeLabel.AutoSize = true;
+            localeLabel.Location = new System.Drawing.Point(16, 554);
+            localeLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            localeLabel.Name = "localeLabel";
+            localeLabel.Size = new System.Drawing.Size(60, 20);
+            localeLabel.TabIndex = 78;
+            localeLabel.Text = "Locale:";
             // 
             // buttonLogin
             // 
             this.buttonLogin.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonLogin.Location = new System.Drawing.Point(17, 57);
+            this.buttonLogin.Location = new System.Drawing.Point(26, 88);
+            this.buttonLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonLogin.Name = "buttonLogin";
-            this.buttonLogin.Size = new System.Drawing.Size(182, 23);
+            this.buttonLogin.Size = new System.Drawing.Size(273, 35);
             this.buttonLogin.TabIndex = 36;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
@@ -128,9 +141,10 @@
             // buttonLogout
             // 
             this.buttonLogout.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.buttonLogout.Location = new System.Drawing.Point(17, 86);
+            this.buttonLogout.Location = new System.Drawing.Point(26, 132);
+            this.buttonLogout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonLogout.Name = "buttonLogout";
-            this.buttonLogout.Size = new System.Drawing.Size(182, 23);
+            this.buttonLogout.Size = new System.Drawing.Size(273, 35);
             this.buttonLogout.TabIndex = 52;
             this.buttonLogout.Text = "Logout";
             this.buttonLogout.UseVisualStyleBackColor = false;
@@ -140,9 +154,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(14, 28);
+            this.label1.Location = new System.Drawing.Point(21, 43);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 13);
+            this.label1.Size = new System.Drawing.Size(269, 20);
             this.label1.TabIndex = 53;
             this.label1.Text = "Welcome to our Facebook app!";
             // 
@@ -157,26 +172,29 @@
             "Events",
             "Groups",
             "Liked Pages"});
-            this.comboBox1.Location = new System.Drawing.Point(733, 55);
+            this.comboBox1.Location = new System.Drawing.Point(1100, 85);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(180, 28);
             this.comboBox1.TabIndex = 54;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(575, 58);
+            this.label2.Location = new System.Drawing.Point(862, 89);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(153, 13);
+            this.label2.Size = new System.Drawing.Size(225, 20);
             this.label2.TabIndex = 55;
             this.label2.Text = "Please choose what to display:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // fetchButton
             // 
-            this.fetchButton.Location = new System.Drawing.Point(859, 53);
+            this.fetchButton.Location = new System.Drawing.Point(1288, 82);
+            this.fetchButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.fetchButton.Name = "fetchButton";
-            this.fetchButton.Size = new System.Drawing.Size(75, 23);
+            this.fetchButton.Size = new System.Drawing.Size(112, 35);
             this.fetchButton.TabIndex = 56;
             this.fetchButton.Text = "Fetch";
             this.fetchButton.UseVisualStyleBackColor = true;
@@ -185,18 +203,21 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(540, 100);
+            this.listBox1.ItemHeight = 20;
+            this.listBox1.Location = new System.Drawing.Point(810, 154);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(277, 199);
+            this.listBox1.Size = new System.Drawing.Size(414, 304);
             this.listBox1.TabIndex = 57;
             this.listBox1.Click += new System.EventHandler(this.listBoxSelectedIndexChanged);
             // 
             // pictureBoxFetchItems
             // 
             this.pictureBoxFetchItems.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.pictureBoxFetchItems.Location = new System.Drawing.Point(823, 100);
+            this.pictureBoxFetchItems.Location = new System.Drawing.Point(1234, 154);
+            this.pictureBoxFetchItems.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBoxFetchItems.Name = "pictureBoxFetchItems";
-            this.pictureBoxFetchItems.Size = new System.Drawing.Size(173, 199);
+            this.pictureBoxFetchItems.Size = new System.Drawing.Size(260, 306);
             this.pictureBoxFetchItems.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxFetchItems.TabIndex = 58;
             this.pictureBoxFetchItems.TabStop = false;
@@ -205,9 +226,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(717, 28);
+            this.label3.Location = new System.Drawing.Point(1076, 43);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(100, 13);
+            this.label3.Size = new System.Drawing.Size(149, 20);
             this.label3.TabIndex = 59;
             this.label3.Text = "User Information";
             // 
@@ -215,25 +237,28 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(318, 28);
+            this.label4.Location = new System.Drawing.Point(477, 43);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 13);
+            this.label4.Size = new System.Drawing.Size(118, 20);
             this.label4.TabIndex = 60;
             this.label4.Text = "Write a post:";
             // 
             // postTextBox
             // 
-            this.postTextBox.Location = new System.Drawing.Point(243, 55);
+            this.postTextBox.Location = new System.Drawing.Point(364, 85);
+            this.postTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.postTextBox.Name = "postTextBox";
-            this.postTextBox.Size = new System.Drawing.Size(268, 244);
+            this.postTextBox.Size = new System.Drawing.Size(400, 373);
             this.postTextBox.TabIndex = 61;
             this.postTextBox.Text = "";
             // 
             // submitButton
             // 
-            this.submitButton.Location = new System.Drawing.Point(436, 276);
+            this.submitButton.Location = new System.Drawing.Point(654, 425);
+            this.submitButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.submitButton.Name = "submitButton";
-            this.submitButton.Size = new System.Drawing.Size(75, 23);
+            this.submitButton.Size = new System.Drawing.Size(112, 35);
             this.submitButton.TabIndex = 62;
             this.submitButton.Text = "Submit";
             this.submitButton.UseVisualStyleBackColor = true;
@@ -243,9 +268,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(489, 355);
+            this.label5.Location = new System.Drawing.Point(734, 546);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 13);
+            this.label5.Size = new System.Drawing.Size(151, 20);
             this.label5.TabIndex = 64;
             this.label5.Text = "Special Features";
             // 
@@ -253,17 +279,19 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(303, 400);
+            this.label6.Location = new System.Drawing.Point(454, 615);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 13);
+            this.label6.Size = new System.Drawing.Size(164, 20);
             this.label6.TabIndex = 65;
             this.label6.Text = "Most Popular Post";
             // 
             // popularPostFetchButton
             // 
-            this.popularPostFetchButton.Location = new System.Drawing.Point(419, 395);
+            this.popularPostFetchButton.Location = new System.Drawing.Point(628, 608);
+            this.popularPostFetchButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.popularPostFetchButton.Name = "popularPostFetchButton";
-            this.popularPostFetchButton.Size = new System.Drawing.Size(75, 23);
+            this.popularPostFetchButton.Size = new System.Drawing.Size(112, 35);
             this.popularPostFetchButton.TabIndex = 66;
             this.popularPostFetchButton.Text = "Fetch";
             this.popularPostFetchButton.UseVisualStyleBackColor = true;
@@ -272,16 +300,19 @@
             // popularPostListBox
             // 
             this.popularPostListBox.FormattingEnabled = true;
-            this.popularPostListBox.Location = new System.Drawing.Point(243, 424);
+            this.popularPostListBox.ItemHeight = 20;
+            this.popularPostListBox.Location = new System.Drawing.Point(364, 652);
+            this.popularPostListBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.popularPostListBox.Name = "popularPostListBox";
-            this.popularPostListBox.Size = new System.Drawing.Size(268, 212);
+            this.popularPostListBox.Size = new System.Drawing.Size(400, 324);
             this.popularPostListBox.TabIndex = 67;
             // 
             // statsFetchButton
             // 
-            this.statsFetchButton.Location = new System.Drawing.Point(781, 395);
+            this.statsFetchButton.Location = new System.Drawing.Point(1172, 608);
+            this.statsFetchButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.statsFetchButton.Name = "statsFetchButton";
-            this.statsFetchButton.Size = new System.Drawing.Size(75, 23);
+            this.statsFetchButton.Size = new System.Drawing.Size(112, 35);
             this.statsFetchButton.TabIndex = 69;
             this.statsFetchButton.Text = "Fetch";
             this.statsFetchButton.UseVisualStyleBackColor = true;
@@ -291,62 +322,64 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(665, 400);
+            this.label7.Location = new System.Drawing.Point(998, 615);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 13);
+            this.label7.Size = new System.Drawing.Size(147, 20);
             this.label7.TabIndex = 68;
             this.label7.Text = "Yearly Statistics";
             // 
             // chart1
             // 
-            chartArea14.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea14);
-            legend14.Enabled = false;
-            legend14.Name = "numOfPosts";
-            this.chart1.Legends.Add(legend14);
-            this.chart1.Location = new System.Drawing.Point(540, 424);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Enabled = false;
+            legend1.Name = "numOfPosts";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(810, 652);
+            this.chart1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.chart1.Name = "chart1";
-            series14.ChartArea = "ChartArea1";
-            series14.IsXValueIndexed = true;
-            series14.Legend = "numOfPosts";
-            series14.Name = "Posts";
-            dataPoint131.AxisLabel = "";
-            dataPoint131.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
-            dataPoint131.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
-            dataPoint131.IsValueShownAsLabel = true;
-            dataPoint131.Label = "";
-            dataPoint131.LabelFormat = "";
-            dataPoint131.LabelToolTip = "";
-            dataPoint131.LegendText = "";
-            dataPoint132.IsValueShownAsLabel = true;
-            dataPoint133.IsValueShownAsLabel = true;
-            dataPoint134.IsValueShownAsLabel = true;
-            dataPoint135.IsValueShownAsLabel = true;
-            dataPoint136.IsValueShownAsLabel = true;
-            dataPoint137.IsValueShownAsLabel = true;
-            dataPoint138.IsValueShownAsLabel = true;
-            dataPoint139.AxisLabel = "";
-            dataPoint139.IsValueShownAsLabel = true;
-            dataPoint139.Label = "";
-            dataPoint140.IsValueShownAsLabel = true;
-            series14.Points.Add(dataPoint131);
-            series14.Points.Add(dataPoint132);
-            series14.Points.Add(dataPoint133);
-            series14.Points.Add(dataPoint134);
-            series14.Points.Add(dataPoint135);
-            series14.Points.Add(dataPoint136);
-            series14.Points.Add(dataPoint137);
-            series14.Points.Add(dataPoint138);
-            series14.Points.Add(dataPoint139);
-            series14.Points.Add(dataPoint140);
-            series14.YValuesPerPoint = 4;
-            this.chart1.Series.Add(series14);
-            this.chart1.Size = new System.Drawing.Size(456, 212);
+            series1.ChartArea = "ChartArea1";
+            series1.IsXValueIndexed = true;
+            series1.Legend = "numOfPosts";
+            series1.Name = "Posts";
+            dataPoint1.AxisLabel = "";
+            dataPoint1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.None;
+            dataPoint1.BorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            dataPoint1.IsValueShownAsLabel = true;
+            dataPoint1.Label = "";
+            dataPoint1.LabelFormat = "";
+            dataPoint1.LabelToolTip = "";
+            dataPoint1.LegendText = "";
+            dataPoint2.IsValueShownAsLabel = true;
+            dataPoint3.IsValueShownAsLabel = true;
+            dataPoint4.IsValueShownAsLabel = true;
+            dataPoint5.IsValueShownAsLabel = true;
+            dataPoint6.IsValueShownAsLabel = true;
+            dataPoint7.IsValueShownAsLabel = true;
+            dataPoint8.IsValueShownAsLabel = true;
+            dataPoint9.AxisLabel = "";
+            dataPoint9.IsValueShownAsLabel = true;
+            dataPoint9.Label = "";
+            dataPoint10.IsValueShownAsLabel = true;
+            series1.Points.Add(dataPoint1);
+            series1.Points.Add(dataPoint2);
+            series1.Points.Add(dataPoint3);
+            series1.Points.Add(dataPoint4);
+            series1.Points.Add(dataPoint5);
+            series1.Points.Add(dataPoint6);
+            series1.Points.Add(dataPoint7);
+            series1.Points.Add(dataPoint8);
+            series1.Points.Add(dataPoint9);
+            series1.Points.Add(dataPoint10);
+            series1.YValuesPerPoint = 4;
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(684, 326);
             this.chart1.TabIndex = 71;
             this.chart1.Text = "chart1";
-            title14.Name = "Title1";
-            title14.Text = "# of Posts Per Year (Example, press fetch to see yours)";
-            this.chart1.Titles.Add(title14);
+            title1.Name = "Title1";
+            title1.Text = "# of Posts Per Year (Example, press fetch to see yours)";
+            this.chart1.Titles.Add(title1);
             // 
             // userBindingSource
             // 
@@ -359,6 +392,7 @@
             this.userBindingNavigator.BindingSource = this.userBindingSource;
             this.userBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.userBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.userBindingNavigator.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.userBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -378,8 +412,9 @@
             this.userBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.userBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.userBindingNavigator.Name = "userBindingNavigator";
+            this.userBindingNavigator.Padding = new System.Windows.Forms.Padding(0, 0, 3, 0);
             this.userBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.userBindingNavigator.Size = new System.Drawing.Size(1185, 25);
+            this.userBindingNavigator.Size = new System.Drawing.Size(1778, 38);
             this.userBindingNavigator.TabIndex = 72;
             this.userBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -389,13 +424,13 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(34, 33);
             this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(54, 33);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -405,7 +440,7 @@
             this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(34, 33);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
@@ -414,7 +449,7 @@
             this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(34, 33);
             this.bindingNavigatorMoveFirstItem.Text = "Move first";
             // 
             // bindingNavigatorMovePreviousItem
@@ -423,13 +458,13 @@
             this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(34, 33);
             this.bindingNavigatorMovePreviousItem.Text = "Move previous";
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 38);
             // 
             // bindingNavigatorPositionItem
             // 
@@ -437,14 +472,14 @@
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(73, 31);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 38);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -452,7 +487,7 @@
             this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(34, 33);
             this.bindingNavigatorMoveNextItem.Text = "Move next";
             // 
             // bindingNavigatorMoveLastItem
@@ -461,13 +496,13 @@
             this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(34, 33);
             this.bindingNavigatorMoveLastItem.Text = "Move last";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 38);
             // 
             // userBindingNavigatorSaveItem
             // 
@@ -475,31 +510,34 @@
             this.userBindingNavigatorSaveItem.Enabled = false;
             this.userBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("userBindingNavigatorSaveItem.Image")));
             this.userBindingNavigatorSaveItem.Name = "userBindingNavigatorSaveItem";
-            this.userBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.userBindingNavigatorSaveItem.Size = new System.Drawing.Size(34, 33);
             this.userBindingNavigatorSaveItem.Text = "Save Data";
             // 
             // aboutTextBox
             // 
             this.aboutTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "About", true));
-            this.aboutTextBox.Location = new System.Drawing.Point(59, 305);
+            this.aboutTextBox.Location = new System.Drawing.Point(88, 469);
+            this.aboutTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.aboutTextBox.Name = "aboutTextBox";
-            this.aboutTextBox.Size = new System.Drawing.Size(140, 20);
+            this.aboutTextBox.Size = new System.Drawing.Size(208, 26);
             this.aboutTextBox.TabIndex = 73;
             // 
             // emailTextBox
             // 
             this.emailTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Email", true));
-            this.emailTextBox.Location = new System.Drawing.Point(59, 331);
+            this.emailTextBox.Location = new System.Drawing.Point(88, 509);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(140, 20);
+            this.emailTextBox.Size = new System.Drawing.Size(208, 26);
             this.emailTextBox.TabIndex = 74;
             // 
             // imageLargePictureBox
             // 
             this.imageLargePictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.userBindingSource, "ImageLarge", true));
-            this.imageLargePictureBox.Location = new System.Drawing.Point(17, 115);
+            this.imageLargePictureBox.Location = new System.Drawing.Point(26, 177);
+            this.imageLargePictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.imageLargePictureBox.Name = "imageLargePictureBox";
-            this.imageLargePictureBox.Size = new System.Drawing.Size(182, 175);
+            this.imageLargePictureBox.Size = new System.Drawing.Size(273, 269);
             this.imageLargePictureBox.TabIndex = 78;
             this.imageLargePictureBox.TabStop = false;
             this.imageLargePictureBox.Click += new System.EventHandler(this.imageLargePictureBox_Click);
@@ -507,26 +545,18 @@
             // localeTextBox
             // 
             this.localeTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.userBindingSource, "Locale", true));
-            this.localeTextBox.Location = new System.Drawing.Point(59, 357);
+            this.localeTextBox.Location = new System.Drawing.Point(88, 549);
+            this.localeTextBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.localeTextBox.Name = "localeTextBox";
-            this.localeTextBox.Size = new System.Drawing.Size(140, 20);
+            this.localeTextBox.Size = new System.Drawing.Size(208, 26);
             this.localeTextBox.TabIndex = 79;
-            // 
-            // localeLabel
-            // 
-            localeLabel.AutoSize = true;
-            localeLabel.Location = new System.Drawing.Point(11, 360);
-            localeLabel.Name = "localeLabel";
-            localeLabel.Size = new System.Drawing.Size(42, 13);
-            localeLabel.TabIndex = 78;
-            localeLabel.Text = "Locale:";
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1185, 730);
+            this.ClientSize = new System.Drawing.Size(1778, 1050);
             this.Controls.Add(localeLabel);
             this.Controls.Add(this.localeTextBox);
             this.Controls.Add(this.imageLargePictureBox);
@@ -554,6 +584,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonLogout);
             this.Controls.Add(this.buttonLogin);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
