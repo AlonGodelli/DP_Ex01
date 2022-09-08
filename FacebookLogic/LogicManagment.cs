@@ -9,14 +9,34 @@ using FacebookLogic;
 
 namespace FacebookLogic
 {
-    public class LogicManagment
+    public sealed class LogicManagment
     {
-        public static User loggedInUser { get; set; }
+        private static User s_Instances;
 
+        private static bool s_BoolLoginResult;
+
+        public static bool boolLoginResult 
+        { 
+            get
+            {
+                return s_BoolLoginResult;
+            }
+        }
         private static LoginResult loginResult { get; set; }
+        public static User Instance 
+        {
+            get
+            {
+                if(s_Instances is null)
+                {
+                    login();
+                }
 
+                return s_Instances;
+            }
+        }
 
-        public static bool Login(out User o_LoggedInUser)
+        private static void login()
         {
             bool isLogInSucceeded;
 
@@ -40,18 +60,18 @@ namespace FacebookLogic
 
             if (!string.IsNullOrEmpty(loginResult.AccessToken))
             {
-                loggedInUser = loginResult.LoggedInUser;
-                isLogInSucceeded = true;
+                s_Instances = loginResult.LoggedInUser;
+                s_BoolLoginResult = true;
             }
             else
             {
-                loggedInUser = null;
-                isLogInSucceeded = false;
+                s_Instances = null;
+                s_BoolLoginResult = false;
             }
 
-            o_LoggedInUser = loggedInUser;
+            //o_LoggedInUser = loggedInUser;
 
-            return isLogInSucceeded;
+            //return isLogInSucceeded;
         }
 
         public static void Logout()

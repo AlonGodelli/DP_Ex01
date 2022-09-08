@@ -8,11 +8,11 @@ using FacebookWrapper.ObjectModel;
 
 namespace FacebookLogic
 {
-    public class PostLogic : LogicManagment
+    public class PostLogic 
     {
         public static void Post(string i_Text)
         {
-            Status postedStatus =  loggedInUser.PostStatus(i_Text);
+            //Status postedStatus =  loggedInUser.PostStatus(i_Text);
         }
     }
 }

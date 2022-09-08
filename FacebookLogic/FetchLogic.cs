@@ -6,31 +6,39 @@ using System.Threading.Tasks;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 using System.Threading;
+using FacebookLogic;
 
 namespace FacebookLogic
 {
-    public class FetchLogic : LogicManagment
+    public class FetchLogic
     {
+        private static User m_LoggedInUser;
+
+        FetchLogic()
+        {
+            m_LoggedInUser = LogicManagment.Instance;
+        }
+
         public static string FetchProfilePicture()
         {
-            return loggedInUser.PictureLargeURL;
+            return m_LoggedInUser.PictureLargeURL;
         }
 
         public static string FetchLocale()
         {
-            return loggedInUser.Locale;
+            return m_LoggedInUser.Locale;
         }
 
         public static string FetchUserName()
         {
-            return loggedInUser.Name;
+            return m_LoggedInUser.Name;
         }
 
         public static List<string> FetchUserPosts()
         {
             List<string> userPostsList = new List<string>();
 
-            foreach (Post post in loggedInUser.Posts)
+            foreach (Post post in m_LoggedInUser.Posts)
             {
                 if (post.Message != null)
                 {
@@ -46,7 +54,7 @@ namespace FacebookLogic
             Post currentMostPopularPost = null;
             int limit = 0; // FOR NOT LIMITING FACEBOOK API ==============
 
-            foreach (Post post in loggedInUser.Posts)
+            foreach (Post post in m_LoggedInUser.Posts)
             {
                 if (post.Message != null)
                 {
@@ -69,7 +77,7 @@ namespace FacebookLogic
         {
             List<string> userAlbumsList = new List<string>();
 
-            foreach (Album album in loggedInUser.Albums)
+            foreach (Album album in m_LoggedInUser.Albums)
             {
                 userAlbumsList.Add(album.Name);
             }
@@ -81,7 +89,7 @@ namespace FacebookLogic
         {
             string albumPictureSource = null;
 
-            foreach (Album album in loggedInUser.Albums)
+            foreach (Album album in m_LoggedInUser.Albums)
             {
                 if (album.Name == i_albumName)
                 {
@@ -96,7 +104,7 @@ namespace FacebookLogic
         {
             string likedPageSource = null;
 
-            foreach (Page page in loggedInUser.LikedPages)
+            foreach (Page page in m_LoggedInUser.LikedPages)
             {
                 if (page.Name == i_PageName)
                 {
@@ -111,7 +119,7 @@ namespace FacebookLogic
         {
             List<string> userEvents = new List<string>();
 
-            foreach (Event fbEvent in loggedInUser.Events)
+            foreach (Event fbEvent in m_LoggedInUser.Events)
             {
                 userEvents.Add(fbEvent.Description);
             }
@@ -123,7 +131,7 @@ namespace FacebookLogic
         {
             List<string> userGroupsList = new List<string>();
 
-            foreach (Group group in loggedInUser.Groups)
+            foreach (Group group in m_LoggedInUser.Groups)
             {
                 userGroupsList.Add(group.Name);
             }
@@ -135,7 +143,7 @@ namespace FacebookLogic
         {
             List<string> likedPages = new List<string>();
 
-            foreach (Page page in loggedInUser.LikedPages)
+            foreach (Page page in m_LoggedInUser.LikedPages)
             {
                 likedPages.Add(page.Name);
             }
@@ -151,7 +159,7 @@ namespace FacebookLogic
 
             initActivityStatisticDictionary(fromYear, toYear, postCountByYear);
 
-            foreach (Post post in loggedInUser.Posts)
+            foreach (Post post in m_LoggedInUser.Posts)
             {
                 if (post.Message != null)
                 {
@@ -177,7 +185,7 @@ namespace FacebookLogic
 
             initActivityStatisticDictionary(fromYear, toYear, postCountByYear);
 
-            foreach (Photo photo in loggedInUser.PhotosTaggedIn)
+            foreach (Photo photo in m_LoggedInUser.PhotosTaggedIn)
             {
                 try
                 {
