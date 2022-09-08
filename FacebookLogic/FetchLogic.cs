@@ -15,21 +15,6 @@ namespace FacebookLogic
             return loggedInUser.PictureLargeURL;
         }
 
-        public static string FetchAbout()
-        {
-            return loggedInUser.About;
-        }
-
-        public static string FetchEmail()
-        {
-            return loggedInUser.Email;
-        }
-
-        public static string FetchRelationshipStatus()
-        {
-            return loggedInUser.RelationshipStatus.ToString();
-        }
-
         public static string FetchLocale()
         {
             return loggedInUser.Locale;

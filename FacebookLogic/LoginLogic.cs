@@ -12,7 +12,7 @@ namespace FacebookLogic
     {
         public static LoginResult loginResult { get; set; }
 
-        public static bool Login()
+        public static bool Login(out User o_LoggedInUser)
         {
             bool isLogInSucceeded;
 
@@ -41,8 +41,11 @@ namespace FacebookLogic
             }
             else
             {
+                loggedInUser = null;
                 isLogInSucceeded = false;
             }
+
+            o_LoggedInUser = loggedInUser;
 
             return isLogInSucceeded;
         }

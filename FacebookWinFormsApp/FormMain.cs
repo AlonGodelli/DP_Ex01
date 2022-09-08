@@ -23,17 +23,23 @@ namespace BasicFacebookFeatures
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
-            bool isLogInSucceeded = LoginLogic.Login();
+            bool isLogInSucceeded = LoginLogic.Login(out User loggedInUser);
+            userBindingSource.DataSource = loggedInUser;
 
             if (isLogInSucceeded == true)
             {
                 this.ClientSize = new System.Drawing.Size(1050, 715);
                 this.CenterToScreen();
                 buttonLogin.Text = $"Logged in as {FacebookLogic.FetchLogic.FetchUserName()}";
-                profilePicture.LoadAsync(FacebookLogic.FetchLogic.FetchProfilePicture());
-                aboutTextBox.Text = (FacebookLogic.FetchLogic.FetchAbout());
-                emailTextBox.Text = (FacebookLogic.FetchLogic.FetchEmail());
-                localeTextBox.Text = (FacebookLogic.FetchLogic.FetchLocale());
+                //profilePicture.LoadAsync(FacebookLogic.FetchLogic.FetchProfilePicture());
+                //foreach (string locale in localeComboBox.Items)
+                //{
+                //    if (locale == FacebookLogic.FetchLogic.FetchLocale())
+                //    {
+                //        localeComboBox.SelectedItem = locale;
+                //        break;
+                //    }
+                //}
             }
             else
             {
@@ -196,7 +202,7 @@ namespace BasicFacebookFeatures
                     MessageBox.Show("No Posts to retrieve");
                 }
             }
-            
+
             catch (Exception)
             {
                 MessageBox.Show("No Posts to retrieve");
@@ -298,6 +304,26 @@ namespace BasicFacebookFeatures
         }
 
         private void localeTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void userBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void localeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void localeTextBox_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void imageLargePictureBox_Click(object sender, EventArgs e)
         {
 
         }
