@@ -9,18 +9,42 @@ using FacebookLogic;
 
 namespace FacebookLogic
 {
-    public class LogicManagment
+    public sealed class LogicManagment
     {
-        public static User loggedInUser { get; set; }
+        private static User s_Instances;
+        private static bool s_IsLogedIn;
 
-        private static LoginResult loginResult { get; set; }
+        private LogicManagment()
+        {
 
+        }
 
-        public static bool Login(out User o_LoggedInUser)
+        public static bool boolLoginResult 
+        { 
+            get
+            {
+                return s_IsLogedIn;
+            }
+        }
+        private static LoginResult FacebookLoginResult { get; set; }
+        public static User Instance 
+        {
+            get
+            {
+                if(s_Instances is null)
+                {
+                    login();
+                }
+
+                return s_Instances;
+            }
+        }
+
+        private static void login()
         {
             bool isLogInSucceeded;
 
-            loginResult = FacebookService.Login(
+            FacebookLoginResult = FacebookService.Login(
                     "463643038546199",
                     "email",
                     "public_profile",
@@ -38,20 +62,20 @@ namespace FacebookLogic
                     "user_videos"
                     );
 
-            if (!string.IsNullOrEmpty(loginResult.AccessToken))
+            if (!string.IsNullOrEmpty(FacebookLoginResult.AccessToken))
             {
-                loggedInUser = loginResult.LoggedInUser;
-                isLogInSucceeded = true;
+                s_Instances = FacebookLoginResult.LoggedInUser;
+                s_IsLogedIn = true;
             }
             else
             {
-                loggedInUser = null;
-                isLogInSucceeded = false;
+                s_Instances = null;
+                s_IsLogedIn = false;
             }
 
-            o_LoggedInUser = loggedInUser;
+            //o_LoggedInUser = loggedInUser;
 
-            return isLogInSucceeded;
+            //return isLogInSucceeded;
         }
 
         public static void Logout()
