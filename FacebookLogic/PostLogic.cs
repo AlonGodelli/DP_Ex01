@@ -10,9 +10,9 @@ namespace FacebookLogic
 {
     public class PostLogic 
     {
-        public static void Post(string i_Text)
+        public static void Post(string i_Text, User i_LoggedInUser)
         {
-            //Status postedStatus =  loggedInUser.PostStatus(i_Text);
+            Status postedStatus = i_LoggedInUser.PostStatus(i_Text);
         }
     }
 }
