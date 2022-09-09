@@ -12,17 +12,21 @@ namespace FacebookLogic
     public sealed class LogicManagment
     {
         private static User s_Instances;
+        private static bool s_IsLogedIn;
 
-        private static bool s_BoolLoginResult;
+        private LogicManagment()
+        {
+
+        }
 
         public static bool boolLoginResult 
         { 
             get
             {
-                return s_BoolLoginResult;
+                return s_IsLogedIn;
             }
         }
-        private static LoginResult loginResult { get; set; }
+        private static LoginResult FacebookLoginResult { get; set; }
         public static User Instance 
         {
             get
@@ -40,7 +44,7 @@ namespace FacebookLogic
         {
             bool isLogInSucceeded;
 
-            loginResult = FacebookService.Login(
+            FacebookLoginResult = FacebookService.Login(
                     "463643038546199",
                     "email",
                     "public_profile",
@@ -58,15 +62,15 @@ namespace FacebookLogic
                     "user_videos"
                     );
 
-            if (!string.IsNullOrEmpty(loginResult.AccessToken))
+            if (!string.IsNullOrEmpty(FacebookLoginResult.AccessToken))
             {
-                s_Instances = loginResult.LoggedInUser;
-                s_BoolLoginResult = true;
+                s_Instances = FacebookLoginResult.LoggedInUser;
+                s_IsLogedIn = true;
             }
             else
             {
                 s_Instances = null;
-                s_BoolLoginResult = false;
+                s_IsLogedIn = false;
             }
 
             //o_LoggedInUser = loggedInUser;
