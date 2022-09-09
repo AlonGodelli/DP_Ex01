@@ -11,12 +11,14 @@ using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 using FacebookLogic;
 using System.Threading;
+using BasicFacebookFeatures;
 
 namespace BasicFacebookFeatures
 {
     public partial class FormMain : Form
     {
         private User m_LoggedInUser;
+
         public FormMain()
         {
             InitializeComponent();
@@ -28,7 +30,7 @@ namespace BasicFacebookFeatures
             m_LoggedInUser = LogicManagment.Instance;
             bool isLogInSucceeded = LogicManagment.boolLoginResult;
             userBindingSource.DataSource = m_LoggedInUser;
-            
+
             if (isLogInSucceeded == true)
             {
                 this.ClientSize = new System.Drawing.Size(1050, 715);
@@ -85,7 +87,12 @@ namespace BasicFacebookFeatures
         {
             try
             {
-                FacebookLogic.PostLogic.Post(this.postTextBox.Text, m_LoggedInUser);
+                PostParameters postParams;
+                postParams.PostType = (ePostType)Enum.Parse(typeof(ePostType), postTypeComboBox.SelectedItem.ToString());
+                postParams.Text = this.postTextBox.Text;
+                postParams.ImgUrl = this.imageUrlTextbox.Text;
+                postParams.LinkUrl = this.linkUrlTextBox.Text;
+                CreatePost.CreateNewPost(postParams, m_LoggedInUser);
             }
             catch (Exception)
             {
@@ -328,6 +335,41 @@ namespace BasicFacebookFeatures
         }
 
         private void imageLargePictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void postTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            submitButton.Enabled = true;
+            submitButton.Text = "Submit";
+            switch (postTypeComboBox.SelectedItem)
+            {
+                case "Image":
+                    imageUrlTextbox.Enabled = true;
+                    linkUrlTextBox.Enabled = false;
+                    linkUrlTextBox.Clear();
+                    break;
+                case "Link":
+                    linkUrlTextBox.Enabled = true;
+                    imageUrlTextbox.Enabled = false;
+                    imageUrlTextbox.Clear();
+                    break;
+                default:
+                    imageUrlTextbox.Enabled = false;
+                    imageUrlTextbox.Clear();
+                    linkUrlTextBox.Enabled = false;
+                    linkUrlTextBox.Clear();
+                    break;
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkUrlTextBox_TextChanged(object sender, EventArgs e)
         {
 
         }

@@ -12,7 +12,7 @@ namespace FacebookLogic
     public sealed class LogicManagment
     {
         private static User s_Instances;
-        private static bool s_IsLogedIn;
+        private static bool s_IsLoggedIn;
 
         private LogicManagment()
         {
@@ -23,7 +23,7 @@ namespace FacebookLogic
         { 
             get
             {
-                return s_IsLogedIn;
+                return s_IsLoggedIn;
             }
         }
         private static LoginResult FacebookLoginResult { get; set; }
@@ -65,12 +65,12 @@ namespace FacebookLogic
             if (!string.IsNullOrEmpty(FacebookLoginResult.AccessToken))
             {
                 s_Instances = FacebookLoginResult.LoggedInUser;
-                s_IsLogedIn = true;
+                s_IsLoggedIn = true;
             }
             else
             {
                 s_Instances = null;
-                s_IsLogedIn = false;
+                s_IsLoggedIn = false;
             }
 
             //o_LoggedInUser = loggedInUser;
