@@ -85,7 +85,7 @@ namespace BasicFacebookFeatures
         {
             try
             {
-                FacebookLogic.PostLogic.Post(this.postTextBox.Text);
+                FacebookLogic.PostLogic.Post(this.postTextBox.Text, m_LoggedInUser);
             }
             catch (Exception)
             {
