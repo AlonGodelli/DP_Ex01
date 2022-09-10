@@ -42,7 +42,6 @@
   <ItemGroup>
     <Compile Include="LogicManagment.cs" />
     <Compile Include="fetchLogic.cs" />
-    <Compile Include="PostLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Facebook">
