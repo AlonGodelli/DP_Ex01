@@ -13,6 +13,7 @@ namespace BasicFacebookFeatures
         public string ImgUrl;
         public string LinkUrl;
     }
+
     public enum ePostType
     {
         Text,

@@ -3,22 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
-using System.Threading;
 using FacebookLogic;
 
 namespace FacebookLogic
 {
     public class FetchLogic
     {
-    
         public static string FetchProfilePicture(User i_LoggedInUser)
         {
             return i_LoggedInUser.PictureLargeURL;
         }
 
-        public static string FetchLocale( User i_LoggedInUser)
+        public static string FetchLocale(User i_LoggedInUser)
         {
             return i_LoggedInUser.Locale;
         }
@@ -61,7 +60,11 @@ namespace FacebookLogic
                         currentMostPopularPost = post;
                     }
                 }
-                if (limit++ > 5) { break; } // FOR NOT LIMITING FACEBOOK API ==============
+
+                if (limit++ > 10)
+                {
+                    break;
+                } // FOR NOT LIMITING FACEBOOK API ==============
             }
 
             return currentMostPopularPost;

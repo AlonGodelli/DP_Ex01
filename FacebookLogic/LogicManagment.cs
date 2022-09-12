@@ -16,22 +16,23 @@ namespace FacebookLogic
 
         private LogicManagment()
         {
-
         }
 
-        public static bool boolLoginResult 
-        { 
+        public static bool boolLoginResult
+        {
             get
             {
                 return s_IsLoggedIn;
             }
         }
+
         private static LoginResult FacebookLoginResult { get; set; }
-        public static User Instance 
+
+        public static User Instance
         {
             get
             {
-                if(s_Instances is null)
+                if (s_Instances is null)
                 {
                     login();
                 }
@@ -42,8 +43,6 @@ namespace FacebookLogic
 
         private static void login()
         {
-            bool isLogInSucceeded;
-
             FacebookLoginResult = FacebookService.Login(
                     "463643038546199",
                     "email",
@@ -59,8 +58,7 @@ namespace FacebookLogic
                     "user_location",
                     "user_photos",
                     "user_posts",
-                    "user_videos"
-                    );
+                    "user_videos");
 
             if (!string.IsNullOrEmpty(FacebookLoginResult.AccessToken))
             {
@@ -72,10 +70,6 @@ namespace FacebookLogic
                 s_Instances = null;
                 s_IsLoggedIn = false;
             }
-
-            //o_LoggedInUser = loggedInUser;
-
-            //return isLogInSucceeded;
         }
 
         public static void Logout()

@@ -5,12 +5,12 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 using FacebookLogic;
-using System.Threading;
 using BasicFacebookFeatures;
 
 namespace BasicFacebookFeatures
@@ -80,7 +80,6 @@ namespace BasicFacebookFeatures
                         break;
                 }
             }).Start();
-
         }
 
         private void submitButton_Click(object sender, EventArgs e)
@@ -178,13 +177,12 @@ namespace BasicFacebookFeatures
             foreach (string message in userPostsList)
             {
                 listBox1.Invoke(new Action(() =>
+                {
+                    if (message != null)
                     {
-                        if (message != null)
-                        {
-                            listBox1.Items.Add(message);
-                        }
+                        listBox1.Items.Add(message);
                     }
-                ));
+                }));
             }
 
             if (userPostsList.Count == 0)
@@ -204,6 +202,7 @@ namespace BasicFacebookFeatures
                         {
                             mostPopularPost = FacebookLogic.FetchLogic.FetchMostPopularPost(m_LoggedInUser);
                         }));
+
                         if (mostPopularPost != null)
                         {
                             popularPostListBox.Items.Add($"Post: {mostPopularPost.Message}");
@@ -214,9 +213,9 @@ namespace BasicFacebookFeatures
                             MessageBox.Show("No Posts to retrieve");
                         }
                     }
+
                 ));
             }
-
             catch (Exception)
             {
                 MessageBox.Show("No Posts to retrieve");
@@ -311,32 +310,26 @@ namespace BasicFacebookFeatures
 
         private void user_eRelationshipStatusComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void localeTextBox_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void userBindingSource_CurrentChanged(object sender, EventArgs e)
         {
-
         }
 
         private void localeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
         private void localeTextBox_TextChanged_1(object sender, EventArgs e)
         {
-
         }
 
         private void imageLargePictureBox_Click(object sender, EventArgs e)
         {
-
         }
 
         private void postTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -366,12 +359,10 @@ namespace BasicFacebookFeatures
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void linkUrlTextBox_TextChanged(object sender, EventArgs e)
         {
-
         }
     }
 }
