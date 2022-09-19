@@ -7,6 +7,7 @@ using System.Threading;
 using FacebookWrapper.ObjectModel;
 using FacebookWrapper;
 using FacebookLogic;
+using System.Linq;
 
 namespace FacebookLogic
 {
@@ -27,19 +28,12 @@ namespace FacebookLogic
             return i_LoggedInUser.Name;
         }
 
-        public static List<string> FetchUserPosts(User i_LoggedInUser)
+        public static IEnumerable<string> FetchUserPosts(User i_LoggedInUser)
         {
-            List<string> userPostsList = new List<string>();
-
-            foreach (Post post in i_LoggedInUser.Posts)
-            {
-                if (post.Message != null)
-                {
-                    userPostsList.Add(post.Message);
-                }
-            }
-
-            return userPostsList;
+            return from post in i_LoggedInUser.Posts
+                   where post.Message != null
+                   orderby post.CreatedTime ascending
+                   select post.Message;
         }
 
         public static Post FetchMostPopularPost(User i_LoggedInUser)

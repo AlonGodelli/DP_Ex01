@@ -171,7 +171,7 @@ namespace BasicFacebookFeatures
 
         private void getPosts()
         {
-            List<string> userPostsList;
+            IEnumerable<string> userPostsList;
 
             userPostsList = FacebookLogic.FetchLogic.FetchUserPosts(m_LoggedInUser);
             foreach (string message in userPostsList)
@@ -185,10 +185,10 @@ namespace BasicFacebookFeatures
                 }));
             }
 
-            if (userPostsList.Count == 0)
-            {
-                MessageBox.Show("No Posts to retrieve");
-            }
+            //if ((int)(userPostsList.Count) == 0)
+            //{
+            //    MessageBox.Show("No Posts to retrieve");
+            //}
         }
 
         private void getMostPopularPost()
