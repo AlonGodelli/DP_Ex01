@@ -13,20 +13,24 @@ namespace BasicFacebookFeatures
 
         public static void CreateNewPost(PostParameters i_PostDetails, User i_LoggedInUser)
         {
+            CreatePost post;
             switch (i_PostDetails.PostType)
             {
                 case ePostType.Text:
-                    new CreateTextPost(i_PostDetails, i_LoggedInUser);
+                    post = new CreateTextPost();
                     break;
                 case ePostType.Image:
-                    new CreateImagePost(i_PostDetails, i_LoggedInUser);
+                    post = new CreateImagePost();
                     break;
                 case ePostType.Link:
-                    new CreateLinkPost(i_PostDetails, i_LoggedInUser);
+                    post = new CreateLinkPost();
                     break;
                 default:
+                    post = new CreateTextPost();
                     break;
             }
+
+            post.Post(i_PostDetails, i_LoggedInUser);
         }
     }
 }
