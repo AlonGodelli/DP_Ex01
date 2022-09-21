@@ -41,18 +41,15 @@ namespace FacebookLogic
             Post currentMostPopularPost = null;
             int limit = 0; // FOR NOT LIMITING FACEBOOK API ==============
 
-            foreach (Post post in i_LoggedInUser.Posts)
+            IEnumerable<Post> postList = from post in i_LoggedInUser.Posts
+                                         where post.Message != null && post.Comments.Count > 0
+                                         select post;
+
+            foreach (Post post in postList)
             {
-                if (post.Message != null)
+                if (post.Comments.Count > currentMostPopularPost.Comments.Count)
                 {
-                    if (currentMostPopularPost == null)
-                    {
-                        currentMostPopularPost = post;
-                    }
-                    else if (post.Comments.Count > currentMostPopularPost.Comments.Count)
-                    {
-                        currentMostPopularPost = post;
-                    }
+                    currentMostPopularPost = post;
                 }
 
                 if (limit++ > 10)
